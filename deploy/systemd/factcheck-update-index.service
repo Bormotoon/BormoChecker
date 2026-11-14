@@ -1,0 +1,11 @@
+[Unit]
+Description=Безопасное обновление FTS-индекса локальных зеркал BormoChecker
+After=network.target
+
+[Service]
+Type=oneshot
+User=bormochecker
+WorkingDirectory=/opt/bormochecker
+ExecStart=/opt/bormochecker/.venv/bin/python -m bormochecker.scripts.update_mirrors_index
+StandardOutput=journal
+StandardError=journal

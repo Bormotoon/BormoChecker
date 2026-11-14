@@ -1,0 +1,23 @@
+[
+  {
+    "file": "d1.txt",
+    "url": "https://zelao.mos.ru/presscenter/news/detail/13255743.html",
+    "title": "В 2026 году в Зеленограде запланировано отремонтировать 340 подъездов",
+    "publisher_kind": "official",
+    "published_at": "2025-10-06"
+  },
+  {
+    "file": "d2.txt",
+    "url": "https://zelao.mos.ru/presscenter/news/detail/13796100.html",
+    "title": "Ремонт подъездов в Зеленограде идет по графику",
+    "publisher_kind": "official",
+    "published_at": ""
+  },
+  {
+    "file": "d3.txt",
+    "url": "https://moskvichi.net/v-zelenograde-podezdy-privodyat-v-poryadok-uzhe-gotovo-233-iz-344/",
+    "title": "В Зеленограде подъезды приводят в порядок: уже готово 233 из 344",
+    "publisher_kind": "unknown",
+    "published_at": ""
+  }
+]

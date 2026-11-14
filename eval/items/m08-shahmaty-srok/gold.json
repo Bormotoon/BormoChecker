@@ -1,0 +1,68 @@
+{
+  "id": "m08-shahmaty-srok",
+  "origin": "modified",
+  "split": "test",
+  "event": "remizova-chess",
+  "source_url": "",
+  "modification": "Срок выставки 8 → 18 октября.",
+  "annotated": "2026-09-23",
+  "claims": [
+    {
+      "id": "g1",
+      "quote": "в КЦ «Зеленоград» открылась шахматная выставка Светланы Ремизовой",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "Персональная выставка живописи Светланы Ремизовой",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g2",
+      "quote": "автор исследует человеческие эмоции и поведение через игру",
+      "checkability": "opinion",
+      "verdict": "not_checkable",
+      "evidence": [],
+      "note": "Искусствоведческая оценка."
+    },
+    {
+      "id": "g3",
+      "quote": "Все работы написаны маслом",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": [],
+      "note": "Первоисточник: «использует разные живописные и графические техники» — про практику вообще, не про эту выставку. Не опровержение."
+    },
+    {
+      "id": "g4",
+      "quote": "в фойе второго этажа до 18 октября с 10:00 до 21:00",
+      "checkability": "web_checkable",
+      "verdict": "contradicted",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "19 сентября – 8 октября, с 10:00 до 21:00",
+          "relation": "contradicts"
+        }
+      ],
+      "note": "8 → 18 октября."
+    },
+    {
+      "id": "g5",
+      "quote": "К теме игры Ремизова обратилась в 2022 году",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    },
+    {
+      "id": "g6",
+      "quote": "участвует в выставках с 1992 года",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    }
+  ]
+}

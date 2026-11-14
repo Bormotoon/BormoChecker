@@ -1,0 +1,103 @@
+{
+  "id": "r01-podjezdy",
+  "origin": "real",
+  "split": "dev",
+  "event": "podjezdy-2026",
+  "source_url": "https://www.zelenograd.ru/news/63740/",
+  "modification": "",
+  "annotated": "2026-09-23",
+  "claims": [
+    {
+      "id": "g1",
+      "quote": "Каждый восьмой подъезд после ремонта отправили на переделку",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "derived",
+          "quote": "41 / 344 = 11,9 % ≈ 1/8",
+          "relation": "supports"
+        }
+      ],
+      "note": "Заголовок: арифметика на предпосылках из текста."
+    },
+    {
+      "id": "g2",
+      "quote": "С первого раза приняли 303 из 344",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": [],
+      "note": "Официально на момент публикации — только промежуточные 279 принятых; итог 303 не найден."
+    },
+    {
+      "id": "g3",
+      "quote": "это 88%",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "derived",
+          "quote": "303 / 344 = 88,1 %",
+          "relation": "supports"
+        }
+      ],
+      "note": "Арифметика на предпосылках из того же текста; сами предпосылки не подтверждены."
+    },
+    {
+      "id": "g4",
+      "quote": "Остальные 41 — отправили на доработку",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    },
+    {
+      "id": "g5",
+      "quote": "7 из 36",
+      "checkability": "web_checkable",
+      "verdict": "partially_supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "в районе Силино – 36",
+          "relation": "partially_supports"
+        }
+      ],
+      "note": "36 подъездов в Силино подтверждены планом префектуры, 7 с замечаниями — нет."
+    },
+    {
+      "id": "g6",
+      "quote": "Более 19% подъездов в 10-12 микрорайонах оказались с недостатками",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "derived",
+          "quote": "7 / 36 = 19,4 %",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g7",
+      "quote": "не нашли недочётов ни в одном из 42 подъездов",
+      "checkability": "web_checkable",
+      "verdict": "partially_supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "в районе Старое Крюково – 42",
+          "relation": "partially_supports"
+        }
+      ],
+      "note": "42 подъезда подтверждены, отсутствие замечаний — нет."
+    },
+    {
+      "id": "g8",
+      "quote": "В 2027-м году плановый ремонт подъездов запланирован в 340 подъезде",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": [],
+      "note": "ЛОВУШКА: 340 в первоисточнике — план на 2026 год, а не на 2027. Совпадение числа не доказательство."
+    }
+  ]
+}

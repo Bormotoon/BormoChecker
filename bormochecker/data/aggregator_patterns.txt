@@ -1,0 +1,12 @@
+# Шаблоны путей и параметров страниц-агрегаторов, тегов, поиска и лент
+/tag/
+/tags/
+/search
+?q=
+/category/
+/categories/
+/topic/
+/topics/
+/rubric/
+/feed
+/rss

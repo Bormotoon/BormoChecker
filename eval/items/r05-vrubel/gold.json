@@ -1,0 +1,80 @@
+{
+  "id": "r05-vrubel",
+  "origin": "real",
+  "split": "dev",
+  "event": "vrubel-170",
+  "source_url": "https://www.zelenograd.ru/news/63726/",
+  "modification": "",
+  "annotated": "2026-09-23",
+  "claims": [
+    {
+      "id": "g1",
+      "quote": "400 работ знаменитого художника и его последователей",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "В экспозиции – около 400 произведений",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g2",
+      "quote": "открылась выставка к 170-летию Михаила Врубеля",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "приуроченный к 170-летию со дня рождения Михаила Врубеля",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g3",
+      "quote": "Дорога из Зеленограда на электричке и метро займет менее полутора часов",
+      "checkability": "not_checkable",
+      "verdict": "not_checkable",
+      "evidence": [],
+      "note": "Бытовая оценка, веб-проверке не подлежит."
+    },
+    {
+      "id": "g4",
+      "quote": "Билеты стоят 450 рублей",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": [],
+      "note": "Цены в сохранённой странице музея нет."
+    },
+    {
+      "id": "g5",
+      "quote": "возможность оплаты Пушкинской картой",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "Купить по Пушкинской карте",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g6",
+      "quote": "Выставка работает до 17 февраля 2027 года",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "18 сентября – 17 февраля",
+          "relation": "supports"
+        }
+      ],
+      "note": "Год в первоисточнике не указан, выводится из даты открытия."
+    }
+  ]
+}

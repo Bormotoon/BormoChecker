@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bormochecker"
+version = "1.0.0"
+description = "Zero-cost, multi-stage Russian fact-checking engine with local LLM extraction, CPU arithmetic/date verification, direct official APIs, and free search cascade."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn>=0.30.0",
+    "pydantic>=2.7.0,<3",
+    "httpx>=0.27.0",
+    "beautifulsoup4>=4.12.0",
+    "PyYAML>=6.0",
+    "pymorphy3>=2.0.0",
+    "pypdf>=4.0.0",
+    "ddgs>=6.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+bormochecker-web = "bormochecker.web:main"
+bormochecker-check = "bormochecker.check_json:main"
+
+[project.urls]
+Homepage = "https://github.com/Bormotoon/BormoChecker"
+Repository = "https://github.com/Bormotoon/BormoChecker"
+Issues = "https://github.com/Bormotoon/BormoChecker/issues"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+include = ["bormochecker*"]
+
+[tool.setuptools.package-data]
+bormochecker = ["data/*.txt", "data/*.yaml", "static/*"]
+
+[tool.setuptools.exclude-package-data]
+bormochecker = ["data/*.sqlite*", "data/*.lock", "data/*.jsonl"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "network: marks tests that require network access",
+    "gpu: marks tests that require GPU",
+    "live: marks tests that run against live services",
+]
+norecursedirs = [".*", "build", "dist", "node_modules", ".venv"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-exclude = [".venv", "build", "dist"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
+
+[tool.coverage.run]
+source = ["bormochecker"]
+omit = [
+    "bormochecker/scripts/*",
+    "tests/*",
+]

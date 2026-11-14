@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BormoChecker — автономный сервис фактчекинга и верификации фактов.">
+  <title>BormoChecker · Фактчекер</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='17' fill='%23f97316'/%3E%3Cpath d='m17 33 9 9 21-24' fill='none' stroke='%23ffffff' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #1c1917;
+      --panel: #292524;
+      --paper: #292524;
+      --canvas: #1c1917;
+      --ink: #f5f5f4;
+      --muted: #b8b2ad;
+      --line: #44403c;
+      --accent: #fb923c;
+      --accent-hover: #f97316;
+      --blue: #38bdf8;
+      --orange: #f97316;
+      --amber: #f59e0b;
+      --green: #22c55e;
+      --red: #ef4444;
+      --purple: #c084fc;
+      --radius: 20px;
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+    }
+    *{box-sizing:border-box} html{font-size:16px} body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.5 Inter,Segoe UI,Arial,sans-serif}
+    button,input,textarea,select{font:inherit} button{cursor:pointer} a{color:inherit}
+    .app{min-height:100vh;display:grid;grid-template-columns:248px minmax(0,1fr)}
+    .sidebar{position:sticky;top:0;height:100vh;padding:26px 20px;background:var(--panel);color:var(--ink);border-right:1px solid var(--line);display:flex;flex-direction:column;overflow:auto}
+    .brand{display:flex;align-items:center;gap:12px;margin:0 8px 28px}
+    .brand-mark{width:40px;height:40px;border-radius:13px;background:linear-gradient(145deg,#f97316,#c2410c);display:grid;place-items:center;box-shadow:0 8px 18px rgba(249,115,22,.25)}
+    .brand-mark svg{width:24px;height:24px}.brand b{display:block;font-size:1.02rem;color:var(--ink)}.brand span{display:block;font-size:.78rem;color:var(--muted)}
+    .nav-label{padding:0 12px;margin:20px 0 8px;color:var(--muted);font-size:.72rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+    .nav{display:grid;gap:5px}
+    .nav a{border:0;color:var(--muted);background:transparent;border-radius:12px;padding:11px 12px;text-align:left;display:flex;align-items:center;gap:11px;min-height:44px;text-decoration:none}
+    .nav a:hover{background:#3b3633;color:var(--ink)}
+    .nav a.active{background:linear-gradient(135deg,#c2410c,#9a3412);color:#fff;box-shadow:0 9px 18px rgba(194,65,12,.3)}
+    .nav svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.8}
+    .city-card{position:relative;min-height:90px;margin:22px 0 14px;border-radius:16px;overflow:hidden;background:#201d1b;border:1px solid var(--line)}
+    .sidebar-foot{border-top:1px solid var(--line);padding:18px 8px 0;display:flex;align-items:center;gap:10px}
+    .avatar{width:36px;height:36px;border-radius:50%;background:#3b3633;color:var(--accent);display:grid;place-items:center;font-weight:800}
+    .sidebar-foot small{display:block;color:var(--muted)}
+
+    main{position:relative;isolation:isolate;min-width:0;padding:30px clamp(20px,3vw,42px) 48px;overflow:hidden}
+    main:before{content:"";position:absolute;z-index:-1;right:-100px;top:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(249,115,22,0.06) 0%,transparent 70%);pointer-events:none}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:26px}
+    .eyebrow{display:flex;align-items:center;gap:8px;margin-bottom:5px;color:var(--accent);font-size:.72rem;font-weight:850;letter-spacing:.09em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:25px;height:2px;background:var(--accent)}
+    .topbar h1{margin:0;font-size:clamp(1.55rem,3vw,2.2rem);letter-spacing:-.035em}
+    .topbar p{margin:4px 0 0;color:var(--muted)}
+    .top-actions{display:flex;gap:10px;align-items:center}
+    .icon-btn,.outline-btn{border:1px solid var(--line);background:var(--panel);border-radius:13px;min-height:44px;color:var(--ink)}
+    .icon-btn{width:44px;display:grid;place-items:center}
+    .outline-btn{padding:0 16px;font-weight:700}
+    .outline-btn:hover,.icon-btn:hover{border-color:var(--accent);background:#3b3633}
+    .manual-btn{border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:3px 10px;font-size:.82rem;font-weight:600;color:var(--ink);cursor:pointer;margin-left:8px;vertical-align:middle}.manual-btn:hover{border-color:var(--accent);background:#3b3633}
+    .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+    .workspace{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;align-items:start}
+    .card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .card-head{padding:22px 24px 17px;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;border-bottom:1px solid var(--line)}
+    .card-head h2,.report h2{font-size:1.18rem;margin:0;letter-spacing:-.02em}
+    .card-head p{margin:4px 0 0;color:var(--muted);font-size:.88rem}
+    .editor-body{padding:20px 24px 24px}
+    .field-label{display:flex;justify-content:space-between;gap:12px;margin-bottom:8px;font-size:.84rem;font-weight:750}
+    .field-label span:last-child{color:var(--muted);font-weight:550}
+    .news-input{width:100%;min-height:245px;resize:vertical;padding:17px 18px;border:1px solid var(--line);border-radius:16px;outline:none;color:var(--ink);background:#171514;line-height:1.65}
+    .news-input:focus,.context-input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(249,115,22,.15)}
+    .editor-tools{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:13px;margin-top:14px}
+    .context-input{width:100%;border:1px solid var(--line);border-radius:14px;padding:13px 15px;outline:none;background:#171514;color:var(--ink)}
+    .primary{border:0;border-radius:14px;background:linear-gradient(135deg,#c2410c,#9a3412);color:#fff;padding:0 22px;min-height:50px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 10px 24px rgba(194,65,12,.25)}
+    .primary:hover{filter:brightness(1.1)}
+    .primary:disabled{opacity:.65;cursor:wait}
+    .primary svg{width:18px}
+    .queue-line{display:flex;align-items:center;gap:8px;margin:12px 2px 0;font-size:.85rem;color:var(--muted)}
+    .qdot{width:9px;height:9px;border-radius:50%;background:var(--green);flex:none}
+    .queue-line.busy .qdot{background:var(--amber)}
+    .queue-line.full .qdot{background:var(--red)}
+    .privacy{display:flex;align-items:center;gap:8px;margin:13px 2px 0;color:var(--muted);font-size:.78rem}
+    .privacy svg{width:15px;stroke:var(--accent)}
+
+    .marked-wrap,.limits-wrap{padding:6px 24px 14px}
+    .marked-wrap h3,.limits-wrap h3{font-size:1rem;margin:14px 0 10px}
+    .marked{white-space:pre-wrap;line-height:1.75;border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:#171514}
+    .marked a{color:inherit;text-decoration:none;border-radius:4px;padding:1px 3px}
+    .marked a.green{background:#14532d;color:#86efac;box-shadow:inset 0 -2px #22c55e}
+    .marked a.yellow{background:#713f12;color:#fde047;box-shadow:inset 0 -2px #eab308}
+    .marked a.red{background:#7f1d1d;color:#fca5a5;box-shadow:inset 0 -2px #ef4444}
+    .marked a.blue{background:#0c4a6e;color:#7dd3fc;box-shadow:inset 0 -2px #38bdf8}
+    .marked a.purple{background:#581c87;color:#d8b4fe;box-shadow:inset 0 -2px #c084fc}
+    .limits-wrap ul{margin:0;padding-left:20px;color:var(--muted)}
+    .claim:target{outline:2px solid var(--accent);outline-offset:4px;border-radius:6px}
+
+    .report{margin-top:18px;display:none;overflow:hidden}
+    .report.visible{display:block;animation:rise .35s ease-out}
+    @keyframes rise{from{opacity:0;transform:translateY(8px)}}
+    .report-top{padding:24px;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;border-bottom:1px solid var(--line)}
+    .verdict{display:flex;align-items:center;gap:14px}
+    .score{width:58px;height:58px;border-radius:18px;background:#3b3633;color:var(--accent);display:grid;place-items:center;font-weight:900;font-size:1.2rem}
+    .report-actions{display:flex;gap:9px}
+    .report-actions button{padding:9px 12px;border:1px solid var(--line);border-radius:11px;background:var(--panel);font-weight:700;font-size:.8rem;color:var(--ink)}
+    .summary{padding:19px 24px;background:#201d1b}
+    .summary p{margin:0}
+    .claims{padding:8px 24px 22px}
+    .claim{border-bottom:1px solid var(--line);padding:18px 0}
+    .claim:last-child{border-bottom:0}
+    .claim-head{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+    .tag{font-size:.72rem;font-weight:850;border-radius:999px;padding:5px 9px}
+    .tag.green{color:#86efac;background:#14532d}
+    .tag.yellow{color:#fde047;background:#713f12}
+    .tag.red{color:#fca5a5;background:#7f1d1d}
+    .tag.blue{color:#7dd3fc;background:#0c4a6e}
+    .tag.purple{color:#d8b4fe;background:#581c87}
+    .claim h3{font-size:.95rem;margin:0}
+    .claim p{margin:7px 0;color:var(--muted)}
+    .source{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-size:.8rem;font-weight:750;text-decoration:none}
+    .source:hover{text-decoration:underline}
+
+    .cost-wrap{padding:0 24px 24px;overflow:auto}
+    .cost-wrap h3{font-size:1rem;margin:8px 0 13px}
+    .cost-table{width:100%;border-collapse:collapse;min-width:790px;font-size:.8rem}
+    .cost-table th,.cost-table td{padding:11px 12px;border:1px solid var(--line);text-align:left}
+    .cost-table th{background:#1c1917;color:var(--ink);font-weight:750}
+    .cost-table tr:nth-child(even) td{background:#23201e}
+    .cost-table tfoot td{font-weight:850;background:#1c1917}
+
+    .loading{display:none;padding:26px}
+    .loading.visible{display:block}
+    .progress-line{height:10px;background:#3b3633;border-radius:99px;overflow:hidden}
+    .progress-line i{display:block;height:100%;width:45%;background:linear-gradient(90deg,#ea580c,#f97316);border-radius:inherit;animation:load 1.2s ease-in-out infinite}
+    @keyframes load{0%{transform:translateX(-110%)}100%{transform:translateX(230%)}}
+    .loading p{margin:12px 0 0;color:var(--muted);font-size:.86rem}
+    .toast{position:fixed;right:24px;bottom:24px;background:#292524;color:#fff;border:1px solid var(--line);padding:13px 16px;border-radius:13px;box-shadow:var(--shadow);opacity:0;transform:translateY(12px);pointer-events:none;transition:.25s}
+    .toast.show{opacity:1;transform:none}
+    .mobile-toggle{display:none}
+    @media(max-width:760px){.app{display:block}.sidebar{position:fixed;z-index:20;left:0;top:0;width:260px;transform:translateX(-105%);transition:.25s}.sidebar.open{transform:none}.mobile-toggle{display:grid}.topbar{align-items:flex-start}.top-actions .outline-btn{display:none}main{padding:20px 16px 40px}.card-head,.editor-body,.report-top,.claims,.cost-wrap{padding-left:17px;padding-right:17px}.editor-tools{grid-template-columns:1fr}.primary{min-height:52px}.report-top{display:grid}.news-input{min-height:210px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar" aria-label="Основная навигация">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div><b>Фактчек</b><span>BormoChecker</span></div>
+      </div>
+      <div class="nav-label">Работа</div>
+      <nav class="nav">
+        <a class="active" href="./"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM8 9h8M8 13h5"/></svg>Новая проверка</a>
+      </nav>
+      <div class="city-card" aria-label="Федеральные первоисточники РФ">
+        <div style="padding:14px;color:var(--ink)">
+          <b style="color:var(--accent);display:block;font-size:.85rem;margin-bottom:4px">Первоисточники РФ</b>
+          <small style="color:var(--muted);display:block;font-size:.72rem;line-height:1.4">edu.gov.ru · pravo.gov.ru · fipi.ru · edsoo.ru</small>
+        </div>
+      </div>
+      <div class="sidebar-foot" style="margin-top:auto">
+        <div class="avatar">BC</div>
+        <div><b style="font-size:.85rem">Фактчек-пульт</b><small id="authStatusText">Гостевой режим (0 ₽)</small></div>
+      </div>
+    </aside>
+    <main>
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">BormoChecker</div>
+          <h1>Пульт фактчека</h1>
+          <p>Проверка фактов, дат, процентов и документов по первоисточникам РФ и локальным вложениям.</p>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn mobile-toggle" id="menuBtn" aria-label="Открыть меню">☰</button>
+          <button class="outline-btn" id="demoBtn">Загрузить пример</button>
+        </div>
+      </header>
+      <div class="workspace">
+        <section class="card editor-card">
+          <div class="card-head"><div><h2>Материал для проверки</h2><p>Русский текст, до 10 000 знаков</p></div></div>
+          <div class="editor-body">
+            <label class="field-label" for="news"><span>Текст новости или фрагмента</span><span id="counter">0 / 10 000</span></label>
+            <span class="field-hint" style="display:block;font-size:.78rem;color:var(--muted);margin-bottom:8px">Лимит: 10 000 знаков на проверку. Для больших статей проверяйте текст по смысловым блокам.</span>
+            <textarea id="news" class="news-input" maxlength="10000" placeholder="Вставьте текст новости, фрагмент дайджеста или пресс-релиза…"></textarea>
+            <div class="editor-tools">
+              <label for="checkMode" class="visually-hidden">Режим проверки</label>
+              <select id="checkMode" name="checkMode" class="context-input" aria-label="Режим проверки" style="max-width:360px">
+                <option value="education" selected>🎓 Образовательный фактчек (ФРП + SearXNG)</option>
+                <option value="local_frp">📚 По базе 129 ФРП, ФГОС и СанПиН (локально, 0 ₽)</option>
+                <option value="journalism_full">🌐 Полный журналистский фактчек (+ Yandex Search)</option>
+              </select>
+              <label for="context" class="visually-hidden">Редакционный контекст</label>
+              <input id="context" class="context-input" aria-label="Редакционный контекст" placeholder="Контекст редакции, рубрика или тема — необязательно">
+              <button id="checkBtn" class="primary" aria-label="Проверить материал"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>Проверить материал</button>
+            </div>
+            <small id="modeHint" style="display:block;font-size:.78rem;color:var(--muted);margin-top:6px" hidden>Платный поиск Yandex Search доступен при наличии токена редакции FACTCHECK_INTERNAL_TOKEN.</small>
+            <div class="queue-line" id="queueLine" aria-live="polite"><i class="qdot"></i><span id="queueText">Очередь: свободно</span></div>
+            <div class="privacy"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 10V7a5 5 0 0 1 10 0v3M5 10h14v10H5z"/></svg>Редакционные данные и локальные вложения AttachmentManifest проверяются по доверенным источникам.</div>
+          </div>
+          <div class="loading" id="loading"><div class="progress-line"><i></i></div><p id="loadingText">Выделяем проверяемые утверждения…</p></div>
+        </section>
+      </div>
+      <section class="card report" id="report" aria-live="polite">
+        <div class="report-top">
+          <div class="verdict">
+            <div class="score" id="reportScore">—</div>
+            <div><h2 id="reportTitle">Результат проверки</h2><p id="reportMeta" style="margin:4px 0 0;color:var(--muted)"></p></div>
+          </div>
+          <div class="report-actions">
+            <button id="applyBtn" aria-label="Применить безопасные правки в черновик" style="background:#9a3412;color:#fff;border:none">✨ Применить безопасные правки в черновик</button>
+            <button id="copyBtn" aria-label="Копировать отчёт">Копировать отчёт</button>
+            <button type="button" aria-label="Распечатать отчёт" onclick="window.print()">Печать</button>
+          </div>
+        </div>
+        <div class="summary"><p id="reportSummary"></p></div>
+        <div class="marked-wrap"><h3>Текст с разметкой</h3><div class="marked" id="reportMarked"></div></div>
+        <div class="claims" id="reportClaims"></div>
+        <div class="limits-wrap" id="limitsWrap" hidden><h3>Ограничения проверки</h3><ul id="reportLimits"></ul></div>
+        <div class="cost-wrap"><h3>Расходы на проверку</h3><table class="cost-table" id="reportCosts"></table></div>
+      </section>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status">Готово</div>
+  <script>
+    const LABELS={confirmed:'Подтверждено',clarify:'Уточнить',error:'Ошибка',opinion:'Оценка',editorial:'Редакционные данные'};
+    const TAG_CLASS={confirmed:'green',clarify:'yellow',error:'red',opinion:'blue',editorial:'purple'};
+    const SOURCE_KINDS={official:'Официальный документ',user_attachment:'Вложение редакции',ledger:'Реестр/база',media:'СМИ',unknown:'Источник'};
+    const COSTS=[['provider','Провайдер'],['model','Модель'],['settings','Настройки'],['duration_s','Длительность, с'],['model_seconds','Время модели, с'],['model_requests','Вызовы модели'],['retries','Повторные попытки'],['input_tokens','Входные токены'],['cached_input_tokens','Из кэша'],['output_tokens','Выходные токены'],['reasoning_tokens','Reasoning-токены'],['search_requests','Поисковые запросы'],['free_search_requests','Бесплатные поисковые запросы'],['paid_search_requests','Платные поисковые запросы (Yandex)'],['cache_hits','Хиты SQLite-кэша'],['local_fts_hits','Хиты локальной базы ФРП/зеркал'],['fetch_requests','Загрузки страниц'],['model_cost_usd','Стоимость модели'],['tools_cost_usd','Стоимость инструментов'],['total_cost_usd','Полная стоимость']];
+    const news=document.querySelector('#news'),counter=document.querySelector('#counter'),checkBtn=document.querySelector('#checkBtn'),report=document.querySelector('#report'),loading=document.querySelector('#loading'),loadingText=document.querySelector('#loadingText'),toast=document.querySelector('#toast');let currentReport=null;
+    const SAMPLES = [
+      {
+        title: '📚 Приказ Минпросвещения № 729 (ФРП и учебный план)',
+        context: 'Приказ Минпросвещения РФ № 729 от 08.10.2025; вступает в силу к 1 сентября 2026 года.',
+        mode: 'local_frp',
+        text: 'С 1 сентября 2026 года в соответствии с приказом Минпросвещения России № 729 вступают в силу изменения в федеральные рабочие программы. Обществознание будет преподаваться в 8–9 классах по 1 часу в неделю. При этом на изучение иностранного языка в 5 классе отводится 102 часа в год (3 часа в неделю). Федеральный реестр ФГОС и ЕДСОО уже обновил тематическое планирование для опорных школ.'
+      },
+      {
+        title: '⚖️ СанПиН 1.2.3685-21 и трудовые права педагогов',
+        context: 'Нормы СанПиН 1.2.3685-21 и разъяснения Роструда по оплате труда учителей.',
+        mode: 'education',
+        text: 'Согласно гигиеническим нормативам СанПиН 1.2.3685-21, в первых классах общеобразовательных организаций домашние задания обязательны со второй четверти и не должны превышать 1 часа в день. По разъяснениям Роструда, проверка письменных работ и классное руководство оплачиваются как отдельный вид дополнительной работы на основании дополнительного соглашения к трудовому договору.'
+      },
+      {
+        title: '🏆 Конкурс педагогического мастерства (календарь и квоты)',
+        context: 'Анонс межрегионального конкурса методических разработок; проверка дат и регламента.',
+        mode: 'education',
+        text: 'Приём заявок на Межрегиональный конкурс педагогического мастерства завершается 15 ноября 2026 года. В полуфинал допускаются участники, набравшие свыше 80 баллов на заочном этапе. Финал конкурса пройдёт в очном формате в Екатеринбурге, а лауреаты получат памятные дипломы и методические пособия.'
+      }
+    ];
+    let sampleIdx = 0;
+    const el=(tag,attrs={},...children)=>{const node=Object.assign(document.createElement(tag),attrs);node.append(...children);return node};
+    function count(){counter.textContent=`${news.value.length.toLocaleString('ru-RU')} / 10 000`}
+    function notify(text){toast.textContent=text;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2200)}
+    function loadDemo(){const s=SAMPLES[sampleIdx%SAMPLES.length];sampleIdx++;news.value=s.text;document.querySelector('#context').value=s.context;document.querySelector('#checkMode').value=s.mode;count();news.focus();notify(`Загружен пример: ${s.title}`)}
+    async function copyToClipboard(text,successMsg){try{if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(text);if(successMsg)notify(successMsg);return true}throw new Error('Clipboard API недоступен')}catch(err){try{const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';ta.style.left='-9999px';document.body.appendChild(ta);ta.focus();ta.select();const ok=document.execCommand('copy');document.body.removeChild(ta);if(ok){if(successMsg)notify(successMsg);return true}}catch(e){}notify('Не удалось скопировать в буфер обмена: выделите и скопируйте текст вручную');return false}}
+    async function applyManualSuggestion(claim){if(!claim||!claim.suggestion)return;if(claim.start!==null&&claim.start!==undefined&&news.value.slice(claim.start,claim.end)===claim.text){news.value=news.value.slice(0,claim.start)+claim.suggestion+news.value.slice(claim.end);count();await copyToClipboard(news.value);notify(`Правка применена: ${claim.suggestion}`)}else if(news.value.includes(claim.text)){news.value=news.value.replace(claim.text,claim.suggestion);count();await copyToClipboard(news.value);notify(`Правка применена: ${claim.suggestion}`)}else{notify('Фрагмент не найден в текущем тексте')}}
+    async function applyAsEditorialNote(claim){if(!claim||!claim.suggestion)return;const insertion=claim.suggestion.includes('прим. редакции')?claim.suggestion:`${claim.text} (${claim.suggestion} — прим. редакции)`;if(claim.start!==null&&claim.start!==undefined&&news.value.slice(claim.start,claim.end)===claim.text){news.value=news.value.slice(0,claim.start)+insertion+news.value.slice(claim.end);count();await copyToClipboard(news.value);notify(`Примечание редакции вставлено: ${insertion}`)}else if(news.value.includes(claim.text)){news.value=news.value.replace(claim.text,insertion);count();await copyToClipboard(news.value);notify(`Примечание редакции вставлено: ${insertion}`)}else{notify('Фрагмент не найден в текущем тексте')}}
+    async function applySafeSuggestions(){if(!currentReport||!currentReport.claims)return;let modified=currentReport.text;const fixable=currentReport.claims.filter(c=>c.label==='error'&&c.suggestion&&c.sources&&c.sources.length>0).sort((a,b)=>(b.start||0)-(a.start||0));const clarifyClaims=currentReport.claims.filter(c=>c.label==='clarify'&&c.suggestion);const clarifyCount=clarifyClaims.length;const clarifyList=clarifyClaims.map(c=>`«${c.text.slice(0,30)}» → «${c.suggestion.slice(0,30)}»`).join('; ');if(!fixable.length){notify(clarifyCount?`Предложения clarify применяются только вручную (${clarifyCount}: ${clarifyList})`:'Нет безопасных правок (error с подтверждённым источником)');return}let applied=0;for(const c of fixable){if(c.start!==null&&c.start!==undefined&&modified.slice(c.start,c.end)===c.text){modified=modified.slice(0,c.start)+c.suggestion+modified.slice(c.end);applied++}else if(modified.includes(c.text)){modified=modified.replace(c.text,c.suggestion);applied++}}news.value=modified;count();await copyToClipboard(modified);notify(`✨ Безопасные правки применены и скопированы (${applied})${clarifyCount?` · ${clarifyCount} предложений clarify требуют ручного подтверждения (${clarifyList})`:''}`)}
+    function tagText(claim){if(!claim.origin)return LABELS[claim.label];if(claim.label==='editorial')return `${LABELS[claim.label]} · ${claim.origin==='stated'?'источник указан':'происхождение уточнить'}`;return `${LABELS[claim.label]} · редакционный источник`}
+    function formatCost(key,value){if(value===null||value===undefined)return 'неизвестно';if(key==='settings')return Object.keys(value).length?JSON.stringify(value):'—';if(key.endsWith('_usd'))return `$${Number(value).toFixed(6)}`;return String(value)}
+    function render(rep){currentReport=rep;const counts=Object.fromEntries(Object.keys(LABELS).map(key=>[key,rep.claims.filter(c=>c.label===key).length]));const checked=rep.claims.length;const factual=counts.confirmed+counts.clarify+counts.error;let scoreText='100%';let titleText='Проверка завершена';if(rep.status==='failed'){scoreText='!';titleText='Проверка не выполнена'}else if(!factual){scoreText='—';titleText='Проверяемых утверждений не найдено'}else if(rep.status==='partial'){const score=Math.round(counts.confirmed/factual*100);scoreText=`${score}%`;titleText='⚠️ Частичная проверка: часть сведений не удалось подтвердить'}else{const score=Math.round(counts.confirmed/factual*100);scoreText=`${score}%`;titleText='Проверка завершена'}document.querySelector('#reportScore').textContent=scoreText;document.querySelector('#reportTitle').textContent=titleText;const rawDt=rep.reference_datetime||rep.costs?.started_at;const checkMoment=rawDt?new Date(rawDt).toLocaleString('ru-RU'):new Date().toLocaleString('ru-RU');const baseMeta=factual?`Проверено ${checked} утверждений · ${counts.clarify} требуют уточнения · ${counts.error} содержат ошибку`:'Проверяемых утверждений не найдено (в тексте нет проверяемых фактов)';document.querySelector('#reportMeta').textContent=`${baseMeta} · Момент проверки: ${checkMoment}`;document.querySelector('#reportSummary').textContent=rep.summary;
+      const cards=rep.claims.map((claim,i)=>{const card=el('article',{id:`claim-${i}`,className:`claim ${claim.label}`},el('div',{className:'claim-head'},el('span',{className:`tag ${TAG_CLASS[claim.label]}`,textContent:tagText(claim)}),el('h3',{textContent:`«${claim.text}»`})),el('p',{textContent:claim.explanation}));if(claim.suggestion){const sugP=el('p',{className:'claim-sug',textContent:`Предлагаемая правка: ${claim.suggestion}`});if(claim.label==='clarify'){const btnManual=el('button',{type:'button',className:'manual-btn',textContent:'Применить вручную'});btnManual.onclick=()=>applyManualSuggestion(claim);sugP.append(' ',btnManual)}if(claim.label==='error'||claim.label==='clarify'){const btnNote=el('button',{type:'button',className:'manual-btn',textContent:'📝 Вставить с прим. редакции'});btnNote.onclick=()=>applyAsEditorialNote(claim);sugP.append(' ',btnNote)}card.append(sugP)}claim.sources.forEach((source,index)=>{const kindLabel=SOURCE_KINDS[source.kind]||'Источник';const locSuffix=source.location?` (${source.location})`:'';card.append(el('a',{className:'source',href:source.url,target:'_blank',rel:'noopener noreferrer',textContent:`${kindLabel} ${index+1}${locSuffix} ↗`}))});return card});
+      const marks=[];let pos=0;for(const c of rep.claims.map((c,i)=>({...c,i})).filter(c=>c.start!==null&&c.start!==undefined&&c.end!==null&&c.end!==undefined).sort((a,b)=>a.start-b.start)){if(c.start<pos)continue;marks.push(rep.text.slice(pos,c.start),el('a',{href:`#claim-${c.i}`,className:TAG_CLASS[c.label],title:tagText(c),textContent:rep.text.slice(c.start,c.end)}));pos=c.end}marks.push(rep.text.slice(pos));document.querySelector('#reportMarked').replaceChildren(...marks);const limits=[...(rep.limitations||[])];if(rep.status==='partial'){const unverified=rep.claims.filter(c=>c.label==='clarify'||c.sources_unavailable);if(unverified.length){limits.unshift('Внимание: статус partial — следующие сведения остались непроверенными:',...unverified.map(c=>`• «${c.text}» — ${c.explanation||'источники не ответили'}`))}else if(!limits.length){limits.unshift('Внимание: статус partial — проверка выполнена частично из-за ограничений времени или бюджета.')}}document.querySelector('#limitsWrap').hidden=!limits.length;document.querySelector('#reportLimits').replaceChildren(...limits.map(t=>el('li',{textContent:t})));document.querySelector('#reportClaims').replaceChildren(...(cards.length?cards:[el('p',{textContent:'Проверяемых утверждений не найдено.'})]));const rows=COSTS.map(([key,label])=>el('tr',{},el('td',{textContent:label}),el('td',{textContent:formatCost(key,rep.costs[key])})));document.querySelector('#reportCosts').replaceChildren(el('thead',{},el('tr',{},el('th',{textContent:'Параметр'}),el('th',{textContent:'Значение'}))),el('tbody',{},...rows));report.classList.add('visible')}
+    async function runCheck(input){if(typeof input==='string'&&input.trim()){news.value=input.slice(0,10000);count()}if(!news.value.trim()){news.focus();notify('Добавьте текст материала');return {status:'error',message:'Текст материала пуст'}}checkBtn.disabled=true;report.classList.remove('visible');loading.classList.add('visible');loadingText.textContent='Выделяем утверждения, ищем источники и считаем стоимость…';isChecking=true;updateQueue();try{const response=await fetch('api/check',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:news.value,note:document.querySelector('#context').value,mode:document.querySelector('#checkMode').value})});if(!response.ok){let message=`Сервер ответил ${response.status}`;try{const body=await response.json();message=body.detail?.[0]?.msg||body.detail||message}catch{}throw new Error(message)}const result=await response.json();render(result);report.scrollIntoView({behavior:'smooth',block:'start'});return result}catch(error){notify(`Проверка не выполнена: ${error.message}`);return {status:'error',message:error.message}}finally{loading.classList.remove('visible');checkBtn.disabled=false;isChecking=false;updateQueue()}}
+    function reportText(rep){const lines=[`ИТОГ: ${rep.summary}`,''];rep.claims.forEach((claim,index)=>{lines.push(`${index+1}. [${tagText(claim)}] «${claim.text}»`,`   ${claim.explanation}`);claim.sources.forEach(source=>lines.push(`   ${source.url}`))});if(rep.limitations?.length)lines.push('','ОГРАНИЧЕНИЯ ПРОВЕРКИ:',...rep.limitations.map(t=>`- ${t}`));lines.push('','РАСХОДЫ:');COSTS.forEach(([key,label])=>lines.push(`${label}: ${formatCost(key,rep.costs[key])}`));return lines.join('\n')}
+    news.addEventListener('input',count);document.querySelector('#demoBtn').addEventListener('click',loadDemo);checkBtn.addEventListener('click',()=>runCheck());document.querySelector('#copyBtn').addEventListener('click',async()=>{if(!currentReport)return;await copyToClipboard(reportText(currentReport),'Отчёт скопирован в буфер обмена')});
+    document.querySelector('#applyBtn').addEventListener('click',applySafeSuggestions);
+    const sidebar=document.querySelector('#sidebar');document.querySelector('#menuBtn').addEventListener('click',()=>sidebar.classList.toggle('open'));
+    let isChecking=false,queueTimer=null,backoffIdx=0;const BACKOFF_MS=[4000,8000,16000,30000];
+    function scheduleNextQueuePoll(isError=false){if(queueTimer){clearTimeout(queueTimer);queueTimer=null}if(document.hidden)return;backoffIdx=isError?Math.min(backoffIdx+1,BACKOFF_MS.length-1):0;queueTimer=setTimeout(updateQueue,BACKOFF_MS[backoffIdx])}
+    async function updateQueue(){if(queueTimer){clearTimeout(queueTimer);queueTimer=null}if(document.hidden)return;try{const r=await fetch('api/queue');if(!r.ok){scheduleNextQueuePoll(true);return}const q=await r.json();const line=document.querySelector('#queueLine'),txt=document.querySelector('#queueText');if(line&&txt){if(q.waiting>0){line.className='queue-line full';txt.textContent=`Очередь: ${q.waiting} в ожидании (${q.running?'обработка':'пауза'})`}else if(q.running){line.className='queue-line busy';txt.textContent='Очередь: выполняется проверка'}else{line.className='queue-line';txt.textContent='Очередь: свободно'}}const opt=document.querySelector('#checkMode option[value="journalism_full"]');const hint=document.querySelector('#modeHint');const authTxt=document.querySelector('#authStatusText');const isGuest=q.role==='guest'||(!q.role&&q.allow_paid_search===false);const guestModes=Array.isArray(q.guest_modes)?q.guest_modes:['local_frp','education'];if(isGuest&&!guestModes.includes('journalism_full')){if(opt)opt.hidden=true;if(document.querySelector('#checkMode').value==='journalism_full'){document.querySelector('#checkMode').value='education'}if(hint)hint.hidden=false;if(authTxt)authTxt.textContent='Гостевой режим (0 ₽)'}else{if(opt)opt.hidden=false;if(hint)hint.hidden=Boolean(q.allow_paid_search);if(authTxt)authTxt.textContent=q.allow_paid_search?'Редакция (полный доступ)':'PRO-доступ (учитель)'}if(isChecking||q.waiting>0||q.running){scheduleNextQueuePoll(false)}}catch(err){scheduleNextQueuePoll(true)}}
+    document.addEventListener('visibilitychange',()=>{if(document.hidden){if(queueTimer){clearTimeout(queueTimer);queueTimer=null}}else{updateQueue()}});
+    updateQueue();
+  </script>
+</body>
+</html>

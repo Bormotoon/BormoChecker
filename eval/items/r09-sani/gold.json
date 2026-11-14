@@ -1,0 +1,72 @@
+{
+  "id": "r09-sani",
+  "origin": "real",
+  "split": "test",
+  "event": "sani-dkmiet",
+  "source_url": "https://www.zelenograd.ru/news/63735/",
+  "modification": "",
+  "annotated": "2026-09-23",
+  "claims": [
+    {
+      "id": "g1",
+      "quote": "в марте спектакль собрал аншлаг",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    },
+    {
+      "id": "g2",
+      "quote": "4 января знаменитые актеры сыграют на сцене ДК МИЭТ",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "4 января 2027 понедельник 18:00 ДК МИЭТ",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g3",
+      "quote": "Билеты от 2000 до 6000 рублей",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "Стоимость билетов от 2000 до 6000 ₽",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g4",
+      "quote": "Действие происходит в уездном городе Черемухине",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": [],
+      "note": "Сюжет пьесы: проверяется по тексту Островского, в сохранённых документах его нет."
+    },
+    {
+      "id": "g5",
+      "quote": "Пьеса классика Александра Островского",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "по пьесе Островского",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g6",
+      "quote": "на все времена актуальна и сегодня",
+      "checkability": "opinion",
+      "verdict": "not_checkable",
+      "evidence": []
+    }
+  ]
+}

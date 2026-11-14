@@ -1,0 +1,35 @@
+{
+  "seed": 42,
+  "total_cases": 24,
+  "dev_count": 16,
+  "holdout_count": 8,
+  "holdout_fraction": 0.333,
+  "dev": [
+    "m01-tuchka-cena",
+    "m02-mcd-etazhi",
+    "m03-vrubel-chisla",
+    "m05-tykvy-rekord",
+    "m07-avtobusy-data",
+    "m09-mcd-modalnost",
+    "r01-podjezdy",
+    "r03-mcd-bashni",
+    "r04-tykvy",
+    "r05-vrubel",
+    "r06-vrachi",
+    "r08-tuchka",
+    "r11-katki",
+    "r12-parking",
+    "s01-demo",
+    "s02-mnenija-prognozy"
+  ],
+  "holdout": [
+    "m04-sani-data",
+    "m06-podjezdy-arifmetika",
+    "m08-shahmaty-srok",
+    "r02-avtobusy",
+    "r07-hakaton",
+    "r09-sani",
+    "r10-shahmaty",
+    "s03-vydumka"
+  ]
+}

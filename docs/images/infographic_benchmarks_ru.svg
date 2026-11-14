@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 620" width="1100" height="620" role="img" aria-label="100 % найденных ошибок (12/12) при 0 ложных подтверждений и 0 ложных обвинений">
+  <title>100 % найденных ошибок (12/12) при 0 ложных подтверждений и 0 ложных обвинений</title>
+  <rect x="0" y="0" width="1100" height="620" rx="14" fill="#F4F5F7" stroke="#D4DCED" stroke-width="1.5"/>
+  <path d="M 14 0 L 34 0 L 34 620 L 14 620 Q 0 620 0 606 L 0 14 Q 0 0 14 0 Z" fill="#2149A1"/>
+  <rect x="10" y="28" width="14" height="14" rx="3" fill="#7199F1"/>
+  <text x="17" y="68" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="800" fill="#FFFFFF" text-anchor="middle" >05</text>
+  <text x="21" y="592" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10" font-weight="700" fill="#C7D7FE" text-anchor="start" transform="rotate(-90 21 592)">BORMOCHECKER · BENCHMARKS</text>
+  <rect x="56" y="28" width="22" height="3" rx="1.5" fill="#7199F1"/>
+  <text x="86" y="34" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11.5" font-weight="700" fill="#2149A1" text-anchor="start" >БЕНЧМАРКИ КАЧЕСТВА И DOD-ОТЧЁТ · 24 ЭТАЛОННЫХ ТЕКСТА · 146 УТВЕРЖДЕНИЙ · 313 ТЕСТОВ</text>
+  <text x="56" y="66" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="21.0" font-weight="800" fill="#1E293B" text-anchor="start" >100 % найденных ошибок (12/12) при 0 ложных подтверждений и 0 ложных обвинений</text>
+  <text x="56" y="91" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="400" fill="#475569" text-anchor="start" >Сравнение раннего пайплайна и релиза v1.0.0 на 24 эталонных текстах в живом и офлайн-профилях (eval/dod.yaml)</text>
+  <line x1="56" y1="108" x2="1074" y2="108" stroke="#D4DCED" stroke-width="1.2"/>
+  <rect x="56" y="124" width="560" height="316" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="56" y="125" width="5" height="314" rx="2.5" fill="#2149A1"/>
+  <text x="74" y="150" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11.5" font-weight="700" fill="#2149A1" text-anchor="start" >ЭВОЛЮЦИЯ КАЧЕСТВА · БАЗОВЫЙ СРЕЗ VS РЕЛИЗ v1.0.0</text>
+  <rect x="74" y="162" width="14" height="10" rx="2" fill="#7199F1"/>
+  <text x="94" y="171" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >Базовый срез (v0.9 baseline)</text>
+  <rect x="342" y="162" width="14" height="10" rx="2" fill="#147249"/>
+  <text x="362" y="171" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" fill="#147249" text-anchor="start" >Релиз v1.0.0 (live benchmark)</text>
+  <text x="74" y="207" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#1E293B" text-anchor="start" >Поймано ошибок (из 12)</text>
+  <rect x="252" y="192" width="204.0" height="10" rx="3" fill="#E5EAF4"/>
+  <rect x="252" y="192" width="187.068" height="10" rx="3" fill="#7199F1"/>
+  <text x="464.0" y="200" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >11 / 12 (91.7%)</text>
+  <rect x="252" y="206" width="204.0" height="10" rx="3" fill="#E5EAF4"/>
+  <rect x="252" y="206" width="204.0" height="10" rx="3" fill="#147249"/>
+  <text x="464.0" y="214" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#147249" text-anchor="start" >12 / 12 (100%)</text>
+  <text x="74" y="255" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#1E293B" text-anchor="start" >Ложные подтверждения</text>
+  <rect x="252" y="240" width="204.0" height="10" rx="3" fill="#E5EAF4"/>
+  <rect x="252" y="240" width="3.0" height="10" rx="3" fill="#7199F1"/>
+  <text x="464.0" y="248" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >0 (строгий предел)</text>
+  <rect x="252" y="254" width="204.0" height="10" rx="3" fill="#E5EAF4"/>
+  <rect x="252" y="254" width="3.0" height="10" rx="3" fill="#147249"/>
+  <text x="464.0" y="262" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#147249" text-anchor="start" >0 (инвариант DoD)</text>
+  <text x="74" y="303" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#1E293B" text-anchor="start" >Ложные обвинения</text>
+  <rect x="252" y="288" width="204.0" height="10" rx="3" fill="#E5EAF4"/>
+  <rect x="252" y="288" width="3.0" height="10" rx="3" fill="#7199F1"/>
+  <text x="464.0" y="296" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >0 (барьеры)</text>
+  <rect x="252" y="302" width="204.0" height="10" rx="3" fill="#E5EAF4"/>
+  <rect x="252" y="302" width="3.0" height="10" rx="3" fill="#147249"/>
+  <text x="464.0" y="310" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#147249" text-anchor="start" >0 (инвариант DoD)</text>
+  <text x="74" y="351" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#1E293B" text-anchor="start" >Извлечённые факты</text>
+  <rect x="252" y="336" width="204.0" height="10" rx="3" fill="#E5EAF4"/>
+  <rect x="252" y="336" width="204.0" height="10" rx="3" fill="#7199F1"/>
+  <text x="464.0" y="344" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >184 (сверх окна)</text>
+  <rect x="252" y="350" width="204.0" height="10" rx="3" fill="#E5EAF4"/>
+  <rect x="252" y="350" width="175.44" height="10" rx="3" fill="#147249"/>
+  <text x="464.0" y="358" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#147249" text-anchor="start" >159 (окно [120, 160])</text>
+  <text x="74" y="399" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" fill="#1E293B" text-anchor="start" >Среднее время (с)</text>
+  <rect x="252" y="384" width="204.0" height="10" rx="3" fill="#E5EAF4"/>
+  <rect x="252" y="384" width="175.032" height="10" rx="3" fill="#7199F1"/>
+  <text x="464.0" y="392" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >42.9 с</text>
+  <rect x="252" y="398" width="204.0" height="10" rx="3" fill="#E5EAF4"/>
+  <rect x="252" y="398" width="126.48" height="10" rx="3" fill="#147249"/>
+  <text x="464.0" y="406" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#147249" text-anchor="start" >31.0 с (27.7 offline)</text>
+  <rect x="632" y="124" width="442" height="316" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="632" y="125" width="5" height="314" rx="2.5" fill="#147249"/>
+  <text x="650" y="150" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11.5" font-weight="700" fill="#2149A1" text-anchor="start" >КОНТРОЛЬНЫЕ КЕЙСЫ DOD (LIVE)</text>
+  <rect x="648" y="166" width="410" height="76" rx="8" fill="#EEF2FC" stroke="#D4DCED" stroke-width="1"/>
+  <text x="660" y="190" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#1E293B" text-anchor="start" >Dabro · Афиша КЦ (117.7 с)</text>
+  <rect x="878" y="174" width="168" height="24" rx="5" fill="#E6F6EE"/>
+<text x="962.0" y="190" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#147249" text-anchor="middle" >MUST 5/5 · SHOULD 2/3</text>
+  <text x="660" y="220" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >Поймано «1,5 ч != 1 ч 40 мин»; дата/цена confirmed</text>
+  <rect x="648" y="254" width="410" height="76" rx="8" fill="#F8FAFC" stroke="#D4DCED" stroke-width="1"/>
+  <text x="660" y="278" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#1E293B" text-anchor="start" >Лось и заяц · МО (66.2 с)</text>
+  <rect x="878" y="262" width="168" height="24" rx="5" fill="#E6F6EE"/>
+<text x="962.0" y="278" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#147249" text-anchor="middle" >MUST 8/8 · SHOULD 2/3</text>
+  <text x="660" y="308" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >100 % редакц. видео помечено editorial; факты по mos.ru</text>
+  <rect x="648" y="342" width="410" height="76" rx="8" fill="#F8FAFC" stroke="#D4DCED" stroke-width="1"/>
+  <text x="660" y="366" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="800" fill="#1E293B" text-anchor="start" >МИЭТ · Приёмная камп. (436.2 с)</text>
+  <rect x="878" y="350" width="168" height="24" rx="5" fill="#E6F6EE"/>
+<text x="962.0" y="366" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#147249" text-anchor="middle" >MUST 2/2 · SHOULD 3/3</text>
+  <text x="660" y="396" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >«Средний балл 60–115» → error; +47% и 261 confirmed</text>
+  <rect x="56" y="456" width="328" height="122" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="56" y="457" width="5" height="120" rx="2.5" fill="#C2410C"/>
+  <text x="70" y="478" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#2149A1" text-anchor="start" >ОПОРА 1 · НУЛЕВОЙ ПОИСК</text>
+  <text x="70" y="506" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="800" fill="#1E293B" text-anchor="start" >6-ступенчатый каскад за 0 ₽</text>
+  <text x="70" y="534" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#475569" text-anchor="start" >SQLite-кэш + FTS5 + Direct API + SearXNG;</text>
+  <text x="70" y="554" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#475569" text-anchor="start" >кластеры сущностей и общий пул.</text>
+  <rect x="401" y="456" width="328" height="122" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="401" y="457" width="5" height="120" rx="2.5" fill="#C2410C"/>
+  <text x="415" y="478" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#2149A1" text-anchor="start" >ОПОРА 2 · CPU-АРИФМЕТИКА</text>
+  <text x="415" y="506" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="800" fill="#1E293B" text-anchor="start" >Детерминированный Decimal-аудит</text>
+  <text x="415" y="534" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#475569" text-anchor="start" >derived.py сверяет проценты (&gt;0.6 п.п.),</text>
+  <text x="415" y="554" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#475569" text-anchor="start" >даты, дни недели, FactLedger и norms.yaml.</text>
+  <rect x="746" y="456" width="328" height="122" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="746" y="457" width="5" height="120" rx="2.5" fill="#C2410C"/>
+  <text x="760" y="478" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#2149A1" text-anchor="start" >ОПОРА 3 · СКОРОСТЬ И ТЕСТЫ</text>
+  <text x="760" y="506" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="800" fill="#1E293B" text-anchor="start" >31.0 с в параллели и 313 тестов</text>
+  <text x="760" y="534" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#475569" text-anchor="start" >Dual Gemma 4 + asyncio.Semaphore(3);</text>
+  <text x="760" y="554" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="400" fill="#475569" text-anchor="start" >24/24 DoD пройдено, ruff + pytest зелёные.</text>
+  <text x="56" y="598" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="400" fill="#64748B" text-anchor="start" >Источник: eval/dod.yaml (live + offline, 24 эталонных текста) · 313 pytest тестов · BormoChecker</text>
+</svg>

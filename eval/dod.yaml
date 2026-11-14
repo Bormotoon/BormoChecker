@@ -1,0 +1,26 @@
+# Definition of Done (DoD) критерии приемки BormoChecker
+# Централизованные пороги качества, времени и классификации
+
+definition_of_done:
+  version: "2.0"
+
+  # Выявление ошибок: минимум 11 из 12 эталонных опровержений (91.7%)
+  min_contradictions_caught: 11
+  total_benchmark_contradictions: 12
+
+  # Ложные срабатывания (критичные пороги надежности)
+  max_false_confirmations: 0
+  max_false_accusations: 2
+
+  # Временные лимиты
+  target_avg_duration_seconds: 45.0
+  time_limit_per_case_seconds: 600.0
+
+  # Правила классификации вердиктов
+  # Уточнение (clarify) не засчитывается как подтверждение (confirmed)
+  clarify_counts_as_confirmed: false
+
+  # Требование к объему извлечения утверждений
+  pred_claims_range:
+    min: 120
+    max: 160

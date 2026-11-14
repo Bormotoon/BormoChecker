@@ -1,0 +1,900 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "BormoChecker API",
+    "description": "Автономный сервис фактчекинга и верификации фактов, новостей и нормативных актов РФ.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Веб-интерфейс фактчекера",
+        "description": "Возвращает HTML-страницу интерактивного пульта фактчекера.",
+        "operationId": "index__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/healthz": {
+      "get": {
+        "summary": "Проверка жизнеспособности (Liveness probe)",
+        "description": "Проверяет запущенность HTTP-сервиса фактчекера.",
+        "operationId": "healthz_healthz_get",
+        "responses": {
+          "200": {
+            "description": "Сервис активен и принимает соединения.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/readyz": {
+      "get": {
+        "summary": "Проверка готовности (Readiness probe)",
+        "description": "Проверяет доступность локальной LLM-модели (llama.cpp) и локальных индексов нормативных документов SQLite FTS5.",
+        "operationId": "readyz_readyz_get",
+        "responses": {
+          "200": {
+            "description": "Сервис готов к обработке запросов фактчекинга.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Сервис не готов: LLM-модель или локальный FTS-индекс недоступны.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/queue": {
+      "get": {
+        "summary": "Состояние очереди и права доступа",
+        "description": "Возвращает текущую загрузку сервиса (выполняется ли проверка, число ожидающих в очереди) и доступные режимы на основе авторизации.",
+        "operationId": "api_queue_api_queue_get",
+        "parameters": [
+          {
+            "name": "x-factcheck-token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Factcheck-Token"
+            }
+          },
+          {
+            "name": "bc_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Bc Session"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Текущий статус очереди и права доступа пользователя.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueueStatusResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Превышен лимит запросов.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/check": {
+      "post": {
+        "summary": "Проверить текст на фактологическую точность",
+        "description": "Выполняет многоэтапную верификацию текста (извлечение утверждений, нормативный поиск, фактчекинг и формирование отчёта с разметкой фрагментов).",
+        "operationId": "api_check_api_check_post",
+        "parameters": [
+          {
+            "name": "x-factcheck-token",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Factcheck-Token"
+            }
+          },
+          {
+            "name": "bc_session",
+            "in": "cookie",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Bc Session"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CheckRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Успешный отчёт фактчекинга с утверждениями, цитатами источников и сметой затрат.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Report"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Некорректный запрос или невалидные входные данные.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Требуется авторизация (cookie bc_session) или сервисный токен (X-Factcheck-Token).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Доступ запрещён: выбранный режим проверки требует роли редактора или подписки PRO.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Проверка отменена: страница закрыта пользователем до начала проверки.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Размер тела запроса превышает допустимый лимит (413 Payload Too Large).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Превышен лимит запросов: слишком частые обращения (429 Too Many Requests).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Сервис временно недоступен: очередь переполнена, таймаут ожидания GPU или регламентная блокировка.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CheckMode": {
+        "type": "string",
+        "enum": [
+          "local_frp",
+          "education",
+          "journalism_full"
+        ],
+        "title": "CheckMode"
+      },
+      "CheckRequest": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "maxLength": 10000,
+            "minLength": 1,
+            "title": "Text",
+            "description": "Текст статьи или новости для проверки (до 10 000 символов)",
+            "examples": [
+              "Минпросвещения утвердило новый график каникул на 2026/2027 учебный год."
+            ]
+          },
+          "note": {
+            "type": "string",
+            "title": "Note",
+            "description": "Служебное пояснение: источники редакции, момент проверки",
+            "default": "",
+            "examples": [
+              "Официальный релиз"
+            ]
+          },
+          "mode": {
+            "$ref": "#/components/schemas/CheckMode",
+            "description": "Режим проверки: local_frp (локальный 0 ₽), education (SearXNG 0 ₽), journalism_full (полный каскад)",
+            "default": "education"
+          },
+          "reference_datetime": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reference Datetime",
+            "description": "Точка отсчёта времени для проверки относительных дат (по умолчанию текущий момент)"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "CheckRequest"
+      },
+      "Claim": {
+        "properties": {
+          "start": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Start",
+            "description": "Позиция в исходном тексте, символы"
+          },
+          "end": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End",
+            "description": "Конечная позиция в исходном тексте, символы"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text",
+            "description": "Ровно text[start:end] исходника (или текст утверждения без привязки)"
+          },
+          "label": {
+            "$ref": "#/components/schemas/Label"
+          },
+          "explanation": {
+            "type": "string",
+            "title": "Explanation"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            },
+            "type": "array",
+            "title": "Sources",
+            "default": []
+          },
+          "suggestion": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Suggestion",
+            "description": "Предлагаемая правка; факты в ней не менять"
+          },
+          "origin": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "stated",
+                  "unclear"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Origin",
+            "description": "Редакционное происхождение фрагмента, независимо от цвета: stated — источник указан, unclear — похоже на собственные сведения редакции, происхождение уточнить. У editorial обязательно; у clarify/error — подпись «редакционный источник»"
+          },
+          "kind": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Kind",
+            "description": "Тип утверждения: web_checkable, opinion, editorial, etc."
+          },
+          "sources_unavailable": {
+            "type": "boolean",
+            "title": "Sources Unavailable",
+            "description": "Признак недоступности источников (сбой провайдеров поиска)",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "text",
+          "label",
+          "explanation"
+        ],
+        "title": "Claim"
+      },
+      "Costs": {
+        "properties": {
+          "provider": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Provider"
+          },
+          "model": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model"
+          },
+          "settings": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Settings",
+            "default": {}
+          },
+          "started_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Started At"
+          },
+          "duration_s": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duration S"
+          },
+          "model_seconds": {
+            "type": "number",
+            "title": "Model Seconds",
+            "default": 0.0
+          },
+          "model_requests": {
+            "type": "integer",
+            "title": "Model Requests",
+            "default": 0
+          },
+          "retries": {
+            "type": "integer",
+            "title": "Retries",
+            "default": 0
+          },
+          "input_tokens": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Input Tokens",
+            "default": 0
+          },
+          "cached_input_tokens": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cached Input Tokens",
+            "default": 0
+          },
+          "output_tokens": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Output Tokens",
+            "default": 0
+          },
+          "reasoning_tokens": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reasoning Tokens",
+            "default": 0
+          },
+          "search_requests": {
+            "type": "integer",
+            "title": "Search Requests",
+            "default": 0
+          },
+          "free_search_requests": {
+            "type": "integer",
+            "title": "Free Search Requests",
+            "default": 0
+          },
+          "paid_search_requests": {
+            "type": "integer",
+            "title": "Paid Search Requests",
+            "default": 0
+          },
+          "cache_hits": {
+            "type": "integer",
+            "title": "Cache Hits",
+            "default": 0
+          },
+          "local_fts_hits": {
+            "type": "integer",
+            "title": "Local Fts Hits",
+            "default": 0
+          },
+          "fetch_requests": {
+            "type": "integer",
+            "title": "Fetch Requests",
+            "default": 0
+          },
+          "http_requests_by_provider": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Http Requests By Provider"
+          },
+          "model_cost_usd": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Model Cost Usd"
+          },
+          "tools_cost_usd": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tools Cost Usd"
+          },
+          "total_cost_usd": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Cost Usd"
+          }
+        },
+        "type": "object",
+        "required": [
+          "started_at"
+        ],
+        "title": "Costs",
+        "description": "Таблица расходов. None = неизвестно, и это НЕ ноль (требование ТЗ)."
+      },
+      "ErrorResponse": {
+        "properties": {
+          "detail": {
+            "type": "string",
+            "title": "Detail",
+            "description": "Человекочитаемое описание ошибки",
+            "examples": [
+              "Очередь заполнена: ждут 5 проверок. Попробуйте через несколько минут."
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "detail"
+        ],
+        "title": "ErrorResponse"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HealthResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status",
+            "description": "Статус компонента",
+            "examples": [
+              "ok",
+              "ready",
+              "unavailable"
+            ]
+          },
+          "detail": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Detail",
+            "description": "Дополнительное описание при сбое"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "title": "HealthResponse"
+      },
+      "Label": {
+        "type": "string",
+        "enum": [
+          "confirmed",
+          "clarify",
+          "error",
+          "opinion",
+          "editorial"
+        ],
+        "title": "Label"
+      },
+      "QueueStatusResponse": {
+        "properties": {
+          "running": {
+            "type": "boolean",
+            "title": "Running",
+            "description": "Выполняется ли проверка в данный момент"
+          },
+          "waiting": {
+            "type": "integer",
+            "title": "Waiting",
+            "description": "Количество проверок в очереди ожидания"
+          },
+          "role": {
+            "type": "string",
+            "title": "Role",
+            "description": "Роль пользователя (guest, teacher, editor, admin)"
+          },
+          "allow_paid_search": {
+            "type": "boolean",
+            "title": "Allow Paid Search",
+            "description": "Разрешён ли платный веб-поиск"
+          },
+          "guest_modes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Guest Modes",
+            "description": "Список режимов, доступных без авторизации редакции"
+          }
+        },
+        "type": "object",
+        "required": [
+          "running",
+          "waiting",
+          "role",
+          "allow_paid_search",
+          "guest_modes"
+        ],
+        "title": "QueueStatusResponse"
+      },
+      "Report": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "partial",
+              "failed"
+            ],
+            "title": "Status"
+          },
+          "summary": {
+            "type": "string",
+            "title": "Summary"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text",
+            "description": "Исходник без изменений"
+          },
+          "claims": {
+            "items": {
+              "$ref": "#/components/schemas/Claim"
+            },
+            "type": "array",
+            "title": "Claims"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations",
+            "default": []
+          },
+          "costs": {
+            "$ref": "#/components/schemas/Costs"
+          },
+          "reference_datetime": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reference Datetime"
+          },
+          "claim_failures": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Claim Failures",
+            "description": "Сбои провайдеров поиска и загрузки по утверждениям"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "summary",
+          "text",
+          "claims",
+          "costs"
+        ],
+        "title": "Report"
+      },
+      "Source": {
+        "properties": {
+          "url": {
+            "type": "string",
+            "title": "Url"
+          },
+          "quote": {
+            "type": "string",
+            "title": "Quote",
+            "description": "Фрагмент источника, который поддерживает именно этот вывод"
+          },
+          "kind": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Kind",
+            "description": "Категория источника: official, media, ledger, user_attachment, reference, other"
+          },
+          "location": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Location",
+            "description": "Локация цитаты в документе (страница, абзац или символьное смещение)"
+          }
+        },
+        "type": "object",
+        "required": [
+          "url",
+          "quote"
+        ],
+        "title": "Source"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

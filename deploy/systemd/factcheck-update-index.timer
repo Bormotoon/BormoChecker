@@ -1,0 +1,11 @@
+[Unit]
+Description=Еженедельный таймер обновления FTS-индекса локальных зеркал BormoChecker
+Requires=factcheck-update-index.service
+
+[Timer]
+# Запуск каждое воскресенье в 03:00
+OnCalendar=Sun *-*-* 03:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,53 @@
+{
+  "id": "m07-avtobusy-data",
+  "origin": "modified",
+  "split": "dev",
+  "event": "bus-stops-0926",
+  "source_url": "",
+  "modification": "Дата запуска 26 сентября → 1 октября.",
+  "annotated": "2026-09-23",
+  "claims": [
+    {
+      "id": "g1",
+      "quote": "Новые остановки появятся на семи автобусных маршрутах с 1 октября",
+      "checkability": "web_checkable",
+      "verdict": "contradicted",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "С 26 сентября для районных маршрутов 16 и 400т",
+          "relation": "contradicts"
+        }
+      ],
+      "note": "Дата запуска 26 сентября → 1 октября."
+    },
+    {
+      "id": "g2",
+      "quote": "На маршрутах 16, 400 т, 20 и 20к добавится остановка «19-й микрорайон» на Заводской улице",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "для районных маршрутов 16 и 400т, а также социальных маршрутов 20 и 20к добавляется остановка «19-й микрорайон»",
+          "relation": "supports"
+        }
+      ],
+      "note": "«Заводская улица» в первоисточнике не названа — но и не противоречит; строгий разметчик может дать partially."
+    },
+    {
+      "id": "g3",
+      "quote": "Она появится на участке между станцией Крюково и остановкой «Заводская улица»",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    },
+    {
+      "id": "g4",
+      "quote": "На маршрутах 3, 24 и 27 появится остановка «Платформа Алабушево»",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 620" width="1100" height="620" role="img" aria-label="Проверка текста при 0 ₽ за поиск: 100 % найденных ошибок и 0 ложных подтверждений">
+  <title>Проверка текста при 0 ₽ за поиск: 100 % найденных ошибок и 0 ложных подтверждений</title>
+  <rect x="0" y="0" width="1100" height="620" rx="14" fill="#F4F5F7" stroke="#D4DCED" stroke-width="1.5"/>
+  <path d="M 14 0 L 34 0 L 34 620 L 14 620 Q 0 620 0 606 L 0 14 Q 0 0 14 0 Z" fill="#2149A1"/>
+  <rect x="10" y="28" width="14" height="14" rx="3" fill="#7199F1"/>
+  <text x="17" y="68" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="800" fill="#FFFFFF" text-anchor="middle" >01</text>
+  <text x="21" y="592" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10" font-weight="700" fill="#C7D7FE" text-anchor="start" transform="rotate(-90 21 592)">BORMOCHECKER · OVERVIEW</text>
+  <rect x="56" y="28" width="22" height="3" rx="1.5" fill="#7199F1"/>
+  <text x="86" y="34" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11.5" font-weight="700" fill="#2149A1" text-anchor="start" >BORMOCHECKER v1.0 · ДВИЖОК ФАКТЧЕКИНГА И РЕДАКЦИОННАЯ СТУДИЯ ВЕРИФИКАЦИИ</text>
+  <text x="56" y="66" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="21.5" font-weight="800" fill="#1E293B" text-anchor="start" >Проверка текста при 0 ₽ за поиск: 100 % найденных ошибок и 0 ложных подтверждений</text>
+  <text x="56" y="91" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="400" fill="#475569" text-anchor="start" >Аудит до 10 000 знаков целиком — с точными цитатами из первоисточников и честной сметой Costs</text>
+  <line x1="56" y1="108" x2="1074" y2="108" stroke="#D4DCED" stroke-width="1.2"/>
+  <rect x="56" y="124" width="584" height="278" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="56" y="125" width="5" height="276" rx="2.5" fill="#2149A1"/>
+  <text x="74" y="150" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11.5" font-weight="700" fill="#2149A1" text-anchor="start" >ВНЕШНИЕ ЗАТРАТЫ НА ПРОВЕРКУ СТАТЬИ (¢ США · ОТ НУЛЯ)</text>
+  <line x1="292.0" y1="168" x2="292.0" y2="364" stroke="#D4DCED" stroke-width="1.5"/>
+  <text x="74" y="186" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1E293B" text-anchor="start" >Традиционная редакция</text>
+  <text x="74" y="202" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="400" fill="#64748B" text-anchor="start" >ручная вычитка + поиск</text>
+  <rect x="292.0" y="174" width="212.0" height="22" rx="4" fill="#64748B"/>
+  <text x="514.0" y="190" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="700" fill="#1E293B" text-anchor="start" >~25.0 ¢</text>
+  <text x="74" y="240" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1E293B" text-anchor="start" >Облачная LLM + веб-поиск</text>
+  <text x="74" y="256" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="400" fill="#64748B" text-anchor="start" >90–140 тыс. входных токенов</text>
+  <rect x="292.0" y="228" width="169.60000000000002" height="22" rx="4" fill="#64748B" fill-opacity="0.45"/>
+  <rect x="292.0" y="228" width="110.24000000000001" height="22" rx="4" fill="#64748B"/>
+  <text x="471.6" y="244" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="700" fill="#1E293B" text-anchor="start" >13–20 ¢</text>
+  <text x="74" y="294" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1E293B" text-anchor="start" >Локальная LLM + API</text>
+  <text x="74" y="310" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="400" fill="#64748B" text-anchor="start" >12 платных запросов</text>
+  <rect x="292.0" y="282" width="57.1552" height="22" rx="4" fill="#7199F1"/>
+  <text x="359.1552" y="298" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="700" fill="#1E293B" text-anchor="start" >6.74 ¢</text>
+  <text x="74" y="348" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1E293B" text-anchor="start" >BormoChecker v1.0</text>
+  <text x="74" y="364" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="400" fill="#64748B" text-anchor="start" >6-ступ. поиск + 2×GPU</text>
+  <rect x="292.0" y="336" width="4.0" height="22" rx="4" fill="#147249"/>
+  <text x="306.0" y="352" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="700" fill="#147249" text-anchor="start" >$0.00 API (0 ₽)</text>
+  <rect x="56.0" y="418" width="138" height="146" rx="10" fill="#EEF2FC" stroke="#7199F1" stroke-width="1.2"/>
+<rect x="56.0" y="419" width="5" height="144" rx="2.5" fill="#147249"/>
+  <text x="68.0" y="442" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="9.5" font-weight="700" fill="#2149A1" text-anchor="start" >ЛОЖНЫЕ ПОДТВЕРЖД.</text>
+  <text x="68.0" y="494" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="27" font-weight="800" fill="#147249" text-anchor="start" >0 / 146</text>
+  <text x="68.0" y="532" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >инвариант DoD</text>
+  <rect x="204.6" y="418" width="138" height="146" rx="10" fill="#EEF2FC" stroke="#7199F1" stroke-width="1.2"/>
+<rect x="204.6" y="419" width="5" height="144" rx="2.5" fill="#147249"/>
+  <text x="216.6" y="442" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="9.5" font-weight="700" fill="#2149A1" text-anchor="start" >ЛОЖНЫЕ ОБВИНЕНИЯ</text>
+  <text x="216.6" y="494" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="27" font-weight="800" fill="#147249" text-anchor="start" >0 / 134</text>
+  <text x="216.6" y="532" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >3 барьера + NLI</text>
+  <rect x="353.2" y="418" width="138" height="146" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="353.2" y="419" width="5" height="144" rx="2.5" fill="#2149A1"/>
+  <text x="365.2" y="442" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="9.5" font-weight="700" fill="#2149A1" text-anchor="start" >ПОЙМАНО ОШИБОК</text>
+  <text x="365.2" y="494" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="27" font-weight="800" fill="#2149A1" text-anchor="start" >12 / 12</text>
+  <text x="365.2" y="532" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >100 % на эталоне</text>
+  <rect x="501.79999999999995" y="418" width="138" height="146" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="501.79999999999995" y="419" width="5" height="144" rx="2.5" fill="#2149A1"/>
+  <text x="513.8" y="442" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="9.5" font-weight="700" fill="#2149A1" text-anchor="start" >СРЕДНЕЕ ВРЕМЯ</text>
+  <text x="513.8" y="494" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="27" font-weight="800" fill="#2149A1" text-anchor="start" >31.0 с</text>
+  <text x="513.8" y="532" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="400" fill="#475569" text-anchor="start" >27.7 с офлайн</text>
+  <rect x="656" y="124" width="418" height="440" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="656" y="125" width="5" height="438" rx="2.5" fill="#C2410C"/>
+  <text x="674" y="150" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11.5" font-weight="700" fill="#2149A1" text-anchor="start" >ПРИМЕР ОТЧЁТА · КЕЙС DABRO</text>
+  <rect x="674" y="164" width="382" height="128" rx="8" fill="#F8FAFC" stroke="#D4DCED" stroke-width="1"/>
+  <text x="684" y="188" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#475569" text-anchor="start" >Концерт состоится в КЦ «Зеленоград»:</text>
+  <rect x="684" y="196" width="236" height="22" rx="4" fill="#E6F6EE"/>
+  <text x="690" y="212" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#147249" text-anchor="start" >1 октября (четверг) в 19:00</text>
+  <rect x="684" y="226" width="206" height="22" rx="4" fill="#FEE8E7"/>
+  <text x="690" y="242" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#A42929" text-anchor="start" >Продолжит.: 1,5 часа</text>
+  <rect x="896" y="226" width="108" height="22" rx="4" fill="#E6F6EE"/>
+  <text x="902" y="242" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#147249" text-anchor="start" >без антракта</text>
+  <rect x="684" y="256" width="236" height="22" rx="4" fill="#E6F6EE"/>
+  <text x="690" y="272" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#147249" text-anchor="start" >Билеты от 2500 до 7000 рублей</text>
+  <rect x="674" y="304" width="382" height="90" rx="8" fill="#FEF7F6" stroke="#FCA5A5" stroke-width="1"/>
+  <rect x="674" y="304" width="4" height="90" rx="2" fill="#A42929"/>
+  <rect x="686" y="314" width="70" height="24" rx="5" fill="#FEE8E7"/>
+<text x="721.0" y="330" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11.5" font-weight="700" fill="#A42929" text-anchor="middle" >ОШИБКА</text>
+  <text x="764" y="330" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#A42929" text-anchor="start" >dkzelenograd.ru · ПЕРВОИСТОЧНИК</text>
+  <text x="686" y="358" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1E293B" text-anchor="start" >«Продолжительность: 1 час 40 минут без антракта»</text>
+  <text x="686" y="380" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#845500" text-anchor="start" >Автоправка: 1 час 40 минут без антракта</text>
+  <text x="674" y="420" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="700" fill="#2149A1" text-anchor="start" >ЧЕСТНАЯ СМЕТА ПРОВЕРКИ (COSTS)</text>
+  <line x1="674" y1="455" x2="1056" y2="455" stroke="#E5EAF4" stroke-width="1"/>
+  <text x="674" y="446" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#475569" text-anchor="start" >Поиск (6-ступ. каскад / FTS5 / SearXNG)</text>
+  <text x="1056" y="446" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" font-weight="700" fill="#147249" text-anchor="end" >0.00 ¢ (0 ₽)</text>
+  <line x1="674" y1="484" x2="1056" y2="484" stroke="#E5EAF4" stroke-width="1"/>
+  <text x="674" y="475" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#475569" text-anchor="start" >Две локальные GPU (5060 Ti + 3070) · 31.0 с</text>
+  <text x="1056" y="475" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" font-weight="700" fill="#1E293B" text-anchor="end" >$0.00 API</text>
+  <line x1="674" y1="513" x2="1056" y2="513" stroke="#E5EAF4" stroke-width="1"/>
+  <text x="674" y="504" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400" fill="#475569" text-anchor="start" >Загрузки страниц (httpx + SSRF)</text>
+  <text x="1056" y="504" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" font-weight="700" fill="#1E293B" text-anchor="end" >0.00 ¢</text>
+  <text x="674" y="533" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#2149A1" text-anchor="start" >ИТОГО внешние API-затраты на текст</text>
+  <text x="1056" y="533" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12.5" font-weight="700" fill="#2149A1" text-anchor="end" >$0.00 (0 ₽)</text>
+  <text x="56" y="594" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="400" fill="#64748B" text-anchor="start" >Источник: eval/dod.yaml (live + offline, 24 эталонных текста) · 313 pytest тестов · BormoChecker</text>
+</svg>

@@ -1,0 +1,41 @@
+{
+  "id": "r12-parking",
+  "origin": "real",
+  "split": "test",
+  "event": "parking-2039",
+  "source_url": "https://www.zelenograd.ru/news/63727/",
+  "modification": "",
+  "annotated": "2026-09-23",
+  "claims": [
+    {
+      "id": "g1",
+      "quote": "подземный паркинг на 99 машино-мест",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    },
+    {
+      "id": "g2",
+      "quote": "в 2026 году Фонд начал распродавать их на электронных аукционах",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    },
+    {
+      "id": "g3",
+      "quote": "«Мы деньги заплатили, а пользоваться имуществом не можем», — говорит покупатель",
+      "checkability": "not_checkable",
+      "verdict": "not_checkable",
+      "evidence": [],
+      "note": "Слова частного лица; проверяется только звонком, не поиском."
+    },
+    {
+      "id": "g4",
+      "quote": "он появился только в 2017 году",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": [],
+      "note": "Проверяемо (Фонд реновации создан в 2017), но сохранённых документов нет — live-прогон должен найти."
+    }
+  ]
+}

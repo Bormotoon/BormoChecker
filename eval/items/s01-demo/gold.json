@@ -1,0 +1,64 @@
+{
+  "id": "s01-demo",
+  "origin": "synthetic",
+  "split": "dev",
+  "event": "demo-dvory",
+  "source_url": "",
+  "modification": "Демо-текст защиты: все пять вердиктов. Документы — fixtures/documents.",
+  "annotated": "2026-09-23",
+  "claims": [
+    {
+      "id": "g1",
+      "quote": "в 2026 году на ремонт дворов в Зеленограде направлено 180 млн рублей",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "В 2026 году на ремонт дворовых территорий округа израсходовано 180 млн рублей.",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g2",
+      "quote": "Работы завершены в 24 дворах",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "В рамках программы завершены работы в 24 дворах.",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g3",
+      "quote": "средняя стоимость благоустройства одного двора составила 7 млн рублей",
+      "checkability": "web_checkable",
+      "verdict": "contradicted",
+      "evidence": [
+        {
+          "document": "derived",
+          "quote": "180 / 24 = 7,5 млн",
+          "relation": "contradicts"
+        }
+      ]
+    },
+    {
+      "id": "g4",
+      "quote": "Это крупнейшая программа благоустройства округа за последние десять лет",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    },
+    {
+      "id": "g5",
+      "quote": "Жители 16-го микрорайона считают, что дворы стали заметно удобнее",
+      "checkability": "opinion",
+      "verdict": "not_checkable",
+      "evidence": []
+    }
+  ]
+}

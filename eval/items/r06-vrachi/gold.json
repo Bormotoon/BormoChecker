@@ -1,0 +1,72 @@
+{
+  "id": "r06-vrachi",
+  "origin": "real",
+  "split": "test",
+  "event": "doctors-for-moms",
+  "source_url": "https://www.zelenograd.ru/news/63725/",
+  "modification": "",
+  "annotated": "2026-09-23",
+  "claims": [
+    {
+      "id": "g1",
+      "quote": "в библиотеке в корпусе 1462",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "Место проведения: Библиотека №252 (корпус 1462)",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g2",
+      "quote": "25 сентября (это пятница)",
+      "checkability": "web_checkable",
+      "verdict": "partially_supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "Встречи проходят каждую последнюю пятницу месяца",
+          "relation": "partially_supports"
+        }
+      ],
+      "note": "25.09.2026 — последняя пятница сентября; точной даты в первоисточнике нет."
+    },
+    {
+      "id": "g3",
+      "quote": "Детского центра больницы имени Кончаловского",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "со специалистами Детского и Перинатального центров ГКБ им. Кончаловского",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g4",
+      "quote": "детской поликлиники №105, стоматологической поликлиники №35",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    },
+    {
+      "id": "g5",
+      "quote": "Участие бесплатное",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    },
+    {
+      "id": "g6",
+      "quote": "Продолжительность: 2 часа",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    }
+  ]
+}

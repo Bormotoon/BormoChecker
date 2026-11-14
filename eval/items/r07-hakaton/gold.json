@@ -1,0 +1,92 @@
+{
+  "id": "r07-hakaton",
+  "origin": "real",
+  "split": "test",
+  "event": "zeldev-hackathon",
+  "source_url": "https://www.zelenograd.ru/news/63714/",
+  "modification": "",
+  "annotated": "2026-09-23",
+  "claims": [
+    {
+      "id": "g1",
+      "quote": "26 сентября в КЦ «Зеленоград» пройдёт «Культурный хакатон» сообщества ZelDev",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "26 СЕНТЯБРЯ 11:00–17:00 КЦ «ЗЕЛЕНОГРАД» · АТРИУМ",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g2",
+      "quote": "Присоединиться можно как своей командой, так и самостоятельно",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "Зарегистрируйтесь одни (команда из одного человека — это нормально)",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g3",
+      "quote": "проверка обычной новости сейчас обходится примерно в 13-20 центов",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": [],
+      "note": "Собственное заявление редакции; внешнего первоисточника нет по определению."
+    },
+    {
+      "id": "g4",
+      "quote": "Ориентир для участников хакатона — не больше 10 центов за материал",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": [],
+      "note": "На zeldev.ru: «Ключевую метрику и критерии оценки объявим на самом хакатоне»."
+    },
+    {
+      "id": "g5",
+      "quote": "Участвовать можно с 14 лет",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": [],
+      "note": "Нужно положение хакатона, оно не сохранено."
+    },
+    {
+      "id": "g6",
+      "quote": "В команде — от одного до пяти человек",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "Команда — до 5 человек",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g7",
+      "quote": "Участие бесплатное, денежного призового фонда нет",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "Призового фонда нет",
+          "relation": "supports"
+        },
+        {
+          "document": "d1.txt",
+          "quote": "Участие бесплатное",
+          "relation": "supports"
+        }
+      ]
+    }
+  ]
+}

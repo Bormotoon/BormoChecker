@@ -1,0 +1,43 @@
+# Нормативные требования и стандарты в сфере образования РФ
+- id: order_729_social_studies
+  title: "Приказ Минпросвещения России № 729"
+  source_url: "http://publication.pravo.gov.ru/document/0001202404090001"
+  scope:
+    subject: "обществознание"
+    grades: [6, 7, 8]
+    keywords: ["обществознан"]
+  effective_from: "2024-09-01"
+  effective_to: "2099-12-31"
+  value: "Обществознание исключено из программы 6–8 классов и изучается только в 9 классе (1 час в неделю)."
+  refuted_patterns:
+    - 'в\s+(?:6|7|8|[6-8][\s–-]+[6-8])\s*класс'
+    - 'в\s+[68][\s–-]+[89]\s+классах'
+  suggestion: "обществознание в 9 классе"
+
+- id: order_729_foreign_lang_5th
+  title: "Приказ Минпросвещения России № 729"
+  source_url: "http://publication.pravo.gov.ru/document/0001202404090001"
+  scope:
+    subject: "иностранный язык"
+    grades: [5]
+    keywords: ["иностранн", "английск"]
+  effective_from: "2024-09-01"
+  effective_to: "2099-12-31"
+  value: "На иностранный язык в 5 классе отводится 68 часов (2 часа в неделю), а не 102 часа."
+  refuted_patterns:
+    - '\b102\s*час'
+  suggestion: "68 часов в 5 классе"
+
+- id: sanpin_1_2_3685_21_homework_1st
+  title: "СанПиН 1.2.3685-21"
+  source_url: "http://publication.pravo.gov.ru/Document/View/0001202102030024"
+  scope:
+    subject: "домашние задания"
+    grades: [1]
+    keywords: ["домашн"]
+  effective_from: "2021-03-01"
+  effective_to: "2099-12-31"
+  value: "Обучение в 1-м классе проводится без домашних заданий и балльного оценивания."
+  refuted_patterns:
+    - 'домашн\w*\s+задан\w*[^\n.]*(?:разрешен|зада[ею]т|до\s+\d+\s+час|обязательн)'
+  suggestion: "в 1 классе домашние задания не задаются"

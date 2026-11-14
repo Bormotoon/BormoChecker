@@ -1,0 +1,104 @@
+{
+  "id": "m06-podjezdy-arifmetika",
+  "origin": "modified",
+  "split": "dev",
+  "event": "podjezdy-2026",
+  "source_url": "",
+  "modification": "Арифметика: 88 % → 93 % при тех же 303/344; 7 из 36 → 9 из 36.",
+  "annotated": "2026-09-23",
+  "claims": [
+    {
+      "id": "g1",
+      "quote": "Каждый восьмой подъезд после ремонта отправили на переделку",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "derived",
+          "quote": "41 / 344 = 11,9 % ≈ 1/8",
+          "relation": "supports"
+        }
+      ],
+      "note": "Заголовок: арифметика на предпосылках из текста."
+    },
+    {
+      "id": "g2",
+      "quote": "С первого раза приняли 303 из 344",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": [],
+      "note": "Официально на момент публикации — только промежуточные 279 принятых; итог 303 не найден."
+    },
+    {
+      "id": "g3",
+      "quote": "это 93%",
+      "checkability": "web_checkable",
+      "verdict": "contradicted",
+      "evidence": [
+        {
+          "document": "derived",
+          "quote": "303 / 344 = 88,1 %, а не 93 %",
+          "relation": "contradicts"
+        }
+      ],
+      "note": "Арифметическая ошибка внутри текста — ловит КОД, а не поиск."
+    },
+    {
+      "id": "g4",
+      "quote": "Остальные 41 — отправили на доработку",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    },
+    {
+      "id": "g5",
+      "quote": "9 из 36",
+      "checkability": "web_checkable",
+      "verdict": "partially_supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "в районе Силино – 36",
+          "relation": "partially_supports"
+        }
+      ],
+      "note": "36 подтверждено, 9 — нет."
+    },
+    {
+      "id": "g6",
+      "quote": "Более 19% подъездов в 10-12 микрорайонах оказались с недостатками",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "derived",
+          "quote": "9 / 36 = 25 % > 19 %",
+          "relation": "supports"
+        }
+      ],
+      "note": "Формально верно и с испорченным числом: 25 % > 19 %. Тест на то, что код не «ловит» ошибку там, где её нет."
+    },
+    {
+      "id": "g7",
+      "quote": "не нашли недочётов ни в одном из 42 подъездов",
+      "checkability": "web_checkable",
+      "verdict": "partially_supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "в районе Старое Крюково – 42",
+          "relation": "partially_supports"
+        }
+      ],
+      "note": "42 подъезда подтверждены, отсутствие замечаний — нет."
+    },
+    {
+      "id": "g8",
+      "quote": "В 2027-м году плановый ремонт подъездов запланирован в 340 подъезде",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": [],
+      "note": "ЛОВУШКА: 340 в первоисточнике — план на 2026 год, а не на 2027. Совпадение числа не доказательство."
+    }
+  ]
+}

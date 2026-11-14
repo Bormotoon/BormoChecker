@@ -1,0 +1,32 @@
+{
+  "id": "s03-vydumka",
+  "origin": "synthetic",
+  "split": "test",
+  "event": "synthetic-fabricated",
+  "source_url": "",
+  "modification": "Событие выдумано целиком. Правильный ответ — unresolved везде, НЕ contradicted: не нашли ≠ опровергли.",
+  "annotated": "2026-09-23",
+  "claims": [
+    {
+      "id": "g1",
+      "quote": "23 сентября в 15-м микрорайоне Зеленограда открылся третий в округе планетарий",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    },
+    {
+      "id": "g2",
+      "quote": "Купол диаметром 18 метров вмещает 240 зрителей",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    },
+    {
+      "id": "g3",
+      "quote": "Строительство обошлось городу в 412 млн рублей",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    }
+  ]
+}

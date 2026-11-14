@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="BormoChecker logo">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="55%" stop-color="#2149A1"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#EEF2FC" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer squircle -->
+  <rect x="4" y="4" width="120" height="120" rx="28" fill="url(#bgGrad)" stroke="#7199F1" stroke-width="2" stroke-opacity="0.45"/>
+
+  <!-- Subtle top highlight arc -->
+  <path d="M28 12 H100" stroke="#7199F1" stroke-width="2" stroke-linecap="round" stroke-opacity="0.35"/>
+
+  <!-- Document card -->
+  <rect x="24" y="20" width="66" height="84" rx="10" fill="url(#glassGrad)" stroke="#CBD5E1" stroke-width="1.5"/>
+
+  <!-- 5-label highlight bars representing the 5 factcheck verdicts -->
+  <!-- confirmed (green) -->
+  <rect x="33" y="33" width="44" height="7" rx="3.5" fill="#147249" fill-opacity="0.22"/>
+  <rect x="33" y="33" width="32" height="7" rx="3.5" fill="#147249"/>
+  <!-- clarify (amber) -->
+  <rect x="33" y="46" width="48" height="7" rx="3.5" fill="#845500" fill-opacity="0.22"/>
+  <rect x="33" y="46" width="24" height="7" rx="3.5" fill="#D97706"/>
+  <!-- error (red) -->
+  <rect x="33" y="59" width="46" height="7" rx="3.5" fill="#A42929" fill-opacity="0.22"/>
+  <rect x="33" y="59" width="28" height="7" rx="3.5" fill="#DC2626"/>
+  <!-- opinion (blue) -->
+  <rect x="33" y="72" width="40" height="7" rx="3.5" fill="#155EEF" fill-opacity="0.22"/>
+  <rect x="33" y="72" width="22" height="7" rx="3.5" fill="#2563EB"/>
+  <!-- editorial (purple) -->
+  <rect x="33" y="85" width="36" height="7" rx="3.5" fill="#704487" fill-opacity="0.22"/>
+  <rect x="33" y="85" width="18" height="7" rx="3.5" fill="#9333EA"/>
+
+  <!-- Verification shield / badge -->
+  <circle cx="86" cy="82" r="24" fill="url(#accentGrad)" stroke="#0F172A" stroke-width="3.5"/>
+  <path d="M75 82.5 L82.5 90 L98 73.5" fill="none" stroke="#FFFFFF" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

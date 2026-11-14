@@ -1,0 +1,429 @@
+{
+  "$defs": {
+    "Claim": {
+      "properties": {
+        "start": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Позиция в исходном тексте, символы",
+          "title": "Start"
+        },
+        "end": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Конечная позиция в исходном тексте, символы",
+          "title": "End"
+        },
+        "text": {
+          "description": "Ровно text[start:end] исходника (или текст утверждения без привязки)",
+          "title": "Text",
+          "type": "string"
+        },
+        "label": {
+          "$ref": "#/$defs/Label"
+        },
+        "explanation": {
+          "title": "Explanation",
+          "type": "string"
+        },
+        "sources": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Source"
+          },
+          "title": "Sources",
+          "type": "array"
+        },
+        "suggestion": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Предлагаемая правка; факты в ней не менять",
+          "title": "Suggestion"
+        },
+        "origin": {
+          "anyOf": [
+            {
+              "enum": [
+                "stated",
+                "unclear"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Редакционное происхождение фрагмента, независимо от цвета: stated — источник указан, unclear — похоже на собственные сведения редакции, происхождение уточнить. У editorial обязательно; у clarify/error — подпись «редакционный источник»",
+          "title": "Origin"
+        },
+        "kind": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Тип утверждения: web_checkable, opinion, editorial, etc.",
+          "title": "Kind"
+        },
+        "sources_unavailable": {
+          "default": false,
+          "description": "Признак недоступности источников (сбой провайдеров поиска)",
+          "title": "Sources Unavailable",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "text",
+        "label",
+        "explanation"
+      ],
+      "title": "Claim",
+      "type": "object"
+    },
+    "Costs": {
+      "description": "Таблица расходов. None = неизвестно, и это НЕ ноль (требование ТЗ).",
+      "properties": {
+        "provider": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Provider"
+        },
+        "model": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model"
+        },
+        "settings": {
+          "additionalProperties": true,
+          "default": {},
+          "title": "Settings",
+          "type": "object"
+        },
+        "started_at": {
+          "format": "date-time",
+          "title": "Started At",
+          "type": "string"
+        },
+        "duration_s": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Duration S"
+        },
+        "model_seconds": {
+          "default": 0.0,
+          "title": "Model Seconds",
+          "type": "number"
+        },
+        "model_requests": {
+          "default": 0,
+          "title": "Model Requests",
+          "type": "integer"
+        },
+        "retries": {
+          "default": 0,
+          "title": "Retries",
+          "type": "integer"
+        },
+        "input_tokens": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": 0,
+          "title": "Input Tokens"
+        },
+        "cached_input_tokens": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": 0,
+          "title": "Cached Input Tokens"
+        },
+        "output_tokens": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": 0,
+          "title": "Output Tokens"
+        },
+        "reasoning_tokens": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": 0,
+          "title": "Reasoning Tokens"
+        },
+        "search_requests": {
+          "default": 0,
+          "title": "Search Requests",
+          "type": "integer"
+        },
+        "free_search_requests": {
+          "default": 0,
+          "title": "Free Search Requests",
+          "type": "integer"
+        },
+        "paid_search_requests": {
+          "default": 0,
+          "title": "Paid Search Requests",
+          "type": "integer"
+        },
+        "cache_hits": {
+          "default": 0,
+          "title": "Cache Hits",
+          "type": "integer"
+        },
+        "local_fts_hits": {
+          "default": 0,
+          "title": "Local Fts Hits",
+          "type": "integer"
+        },
+        "fetch_requests": {
+          "default": 0,
+          "title": "Fetch Requests",
+          "type": "integer"
+        },
+        "http_requests_by_provider": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Http Requests By Provider",
+          "type": "object"
+        },
+        "model_cost_usd": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model Cost Usd"
+        },
+        "tools_cost_usd": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tools Cost Usd"
+        },
+        "total_cost_usd": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Total Cost Usd"
+        }
+      },
+      "required": [
+        "started_at"
+      ],
+      "title": "Costs",
+      "type": "object"
+    },
+    "Label": {
+      "enum": [
+        "confirmed",
+        "clarify",
+        "error",
+        "opinion",
+        "editorial"
+      ],
+      "title": "Label",
+      "type": "string"
+    },
+    "Source": {
+      "properties": {
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "quote": {
+          "description": "Фрагмент источника, который поддерживает именно этот вывод",
+          "title": "Quote",
+          "type": "string"
+        },
+        "kind": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Категория источника: official, media, ledger, user_attachment, reference, other",
+          "title": "Kind"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Локация цитаты в документе (страница, абзац или символьное смещение)",
+          "title": "Location"
+        }
+      },
+      "required": [
+        "url",
+        "quote"
+      ],
+      "title": "Source",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "status": {
+      "enum": [
+        "ok",
+        "partial",
+        "failed"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "summary": {
+      "title": "Summary",
+      "type": "string"
+    },
+    "text": {
+      "description": "Исходник без изменений",
+      "title": "Text",
+      "type": "string"
+    },
+    "claims": {
+      "items": {
+        "$ref": "#/$defs/Claim"
+      },
+      "title": "Claims",
+      "type": "array"
+    },
+    "limitations": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    },
+    "costs": {
+      "$ref": "#/$defs/Costs"
+    },
+    "reference_datetime": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Reference Datetime"
+    },
+    "claim_failures": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Сбои провайдеров поиска и загрузки по утверждениям",
+      "title": "Claim Failures",
+      "type": "object"
+    }
+  },
+  "required": [
+    "status",
+    "summary",
+    "text",
+    "claims",
+    "costs"
+  ],
+  "title": "Report",
+  "type": "object"
+}

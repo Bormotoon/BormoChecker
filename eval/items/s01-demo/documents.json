@@ -1,0 +1,16 @@
+[
+  {
+    "file": "d1.txt",
+    "url": "https://example.invalid/fixture/prefecture-report-2026",
+    "title": "Отчёт о программе благоустройства дворовых территорий за 2026 год",
+    "publisher_kind": "official",
+    "published_at": "2026-09-01"
+  },
+  {
+    "file": "d2.txt",
+    "url": "https://example.invalid/fixture/city-news-blagoustroystvo",
+    "title": "В округе завершили благоустройство дворов",
+    "publisher_kind": "media",
+    "published_at": "2026-09-03"
+  }
+]

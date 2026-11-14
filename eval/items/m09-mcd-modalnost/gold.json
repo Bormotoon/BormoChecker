@@ -1,0 +1,92 @@
+{
+  "id": "m09-mcd-modalnost",
+  "origin": "modified",
+  "split": "test",
+  "event": "petrovsko-razumovskaya-towers",
+  "source_url": "",
+  "modification": "Модальность: «построят» → «построили».",
+  "annotated": "2026-09-23",
+  "claims": [
+    {
+      "id": "g1",
+      "quote": "В составе станции МЦД «Петровско-Разумовской» построили две башни",
+      "checkability": "web_checkable",
+      "verdict": "partially_supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "Столичные власти согласовали архитектурную концепцию двух многофункциональных комплексов",
+          "relation": "partially_supports"
+        }
+      ],
+      "note": "МОДАЛЬНОСТЬ: согласована концепция ≠ построено (03_contracts.md §5). Кто ставит supported — не читает источник."
+    },
+    {
+      "id": "g2",
+      "quote": "закрытая пешеходная галерея в форме полумесяца",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "между корпусами появится закрытый конкорс в виде полумесяца, который свяжет переходы к станциям метро, МЦД и остановкам наземного транспорта",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g3",
+      "quote": "бизнес-центров на 41 и 28 этажей",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "высотой 41 и 28 этажей",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g4",
+      "quote": "на первых этажах — помещения для магазинов",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "На первых этажах разместятся помещения для стрит-ритейла",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g5",
+      "quote": "подземный и наземные паркинги, в том числе с зарядками для электромобилей",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "Проектом предусмотрены подземный и наземные паркинги, включая машиноместа с электрозарядками",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g6",
+      "quote": "станцию закрыли в июле 2026 года",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    },
+    {
+      "id": "g7",
+      "quote": "из-за строительства путей высокоскоростной магистрали Москва — Петербург",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": [],
+      "note": "msk1.ru упоминает станцию ВСМ в проекте узла, но не причину закрытия."
+    }
+  ]
+}

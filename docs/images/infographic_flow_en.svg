@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 620" width="1100" height="620" role="img" aria-label="End-to-End Processing Flow: Text to Report">
+  <title>End-to-End Processing Flow: Text to Report</title>
+  <rect x="0" y="0" width="1100" height="620" rx="14" fill="#F4F5F7" stroke="#D4DCED" stroke-width="1.5"/>
+  <path d="M 14 0 L 34 0 L 34 620 L 14 620 Q 0 620 0 606 L 0 14 Q 0 0 14 0 Z" fill="#2149A1"/>
+  <rect x="10" y="28" width="14" height="14" rx="3" fill="#7199F1"/>
+  <text x="17" y="68" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="800" fill="#FFFFFF" text-anchor="middle" >02B</text>
+  <text x="21" y="592" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10" font-weight="700" fill="#C7D7FE" text-anchor="start" transform="rotate(-90 21 592)">BORMOCHECKER · DATA FLOW</text>
+  <rect x="48" y="28" width="22" height="3" rx="1.5" fill="#7199F1"/>
+  <text x="78" y="34" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11.5" font-weight="700" fill="#2149A1" text-anchor="start" >END-TO-END DATA FLOW · 01 -&gt; 08</text>
+  <text x="48" y="66" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="23" font-weight="800" fill="#1E293B" text-anchor="start" >End-to-End Processing Flow: Text to Report</text>
+  <text x="48" y="91" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#475569" text-anchor="start" >Every request flows through 8 deterministic and LLM stages under a strict output contract</text>
+  <line x1="48" y1="108" x2="1052" y2="108" stroke="#D4DCED" stroke-width="1.2"/>
+  <rect x="48" y="144" width="1004" height="40" rx="8" fill="#EEF2FC" stroke="#2149A1" stroke-width="1.2"/>
+  <rect x="60" y="152" width="68" height="24" rx="5" fill="#2149A1"/>
+<text x="94.0" y="168" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle" >INPUT</text>
+  <text x="140" y="169" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#1E293B" text-anchor="start" >Input Text &lt;= 10,000 chars + Editorial Note + Uploads (AttachmentManifest)</text>
+  <rect x="48" y="200" width="230" height="132" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="49" y="200" width="228" height="4" rx="2" fill="#7199F1"/>
+  <rect x="62" y="216" width="34" height="24" rx="5" fill="#EEF2FC"/>
+<text x="79.0" y="232" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="700" fill="#7199F1" text-anchor="middle" >01</text>
+  <text x="104" y="232" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="600" fill="#475569" text-anchor="start" >extract.py</text>
+  <text x="62" y="260" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#1E293B" text-anchor="start" >Atomic Claims</text>
+  <text x="62" y="286" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >Exact [start:end] spans,</text>
+  <text x="62" y="306" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >origin &amp; opinions</text>
+  <line x1="282" y1="266" x2="296" y2="266" stroke="#7199F1" stroke-width="2.2"/><polygon points="294,261 302,266 294,271" fill="#7199F1"/>
+  <rect x="306" y="200" width="230" height="132" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="307" y="200" width="228" height="4" rx="2" fill="#147249"/>
+  <rect x="320" y="216" width="34" height="24" rx="5" fill="#E6F6EE"/>
+<text x="337.0" y="232" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="700" fill="#147249" text-anchor="middle" >02</text>
+  <text x="362" y="232" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="600" fill="#475569" text-anchor="start" >derived.py + norms</text>
+  <text x="320" y="260" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#1E293B" text-anchor="start" >Deterministic Math</text>
+  <text x="320" y="286" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >Decimal (&gt;0.6 pp),</text>
+  <text x="320" y="306" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >weekdays &amp; FactLedger</text>
+  <line x1="540" y1="266" x2="554" y2="266" stroke="#7199F1" stroke-width="2.2"/><polygon points="552,261 560,266 552,271" fill="#7199F1"/>
+  <rect x="564" y="200" width="230" height="132" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="565" y="200" width="228" height="4" rx="2" fill="#7199F1"/>
+  <rect x="578" y="216" width="34" height="24" rx="5" fill="#EEF2FC"/>
+<text x="595.0" y="232" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="700" fill="#7199F1" text-anchor="middle" >03</text>
+  <text x="620" y="232" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="600" fill="#475569" text-anchor="start" >pipeline + sources</text>
+  <text x="578" y="260" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#1E293B" text-anchor="start" >Subject &amp; Queries</text>
+  <text x="578" y="286" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >Primary subject cluster</text>
+  <text x="578" y="306" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >&amp; targeted search queries</text>
+  <line x1="798" y1="266" x2="812" y2="266" stroke="#7199F1" stroke-width="2.2"/><polygon points="810,261 818,266 810,271" fill="#7199F1"/>
+  <rect x="822" y="200" width="230" height="132" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="823" y="200" width="228" height="4" rx="2" fill="#C2410C"/>
+  <rect x="836" y="216" width="34" height="24" rx="5" fill="#FFF2C7"/>
+<text x="853.0" y="232" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="700" fill="#C2410C" text-anchor="middle" >04</text>
+  <text x="878" y="232" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="600" fill="#475569" text-anchor="start" >search + direct_apis</text>
+  <text x="836" y="260" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#1E293B" text-anchor="start" >6-Stage Cascade</text>
+  <text x="836" y="286" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >All-Searches-First:</text>
+  <text x="836" y="306" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >$0 cost, &lt;=40% / 160s</text>
+  <rect x="48" y="348" width="1004" height="26" rx="6" fill="#E5EAF4" stroke="#D4DCED" stroke-width="1"/>
+  <text x="550" y="365" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="700" fill="#64748B" text-anchor="middle" >ALL-SEARCHES-FIRST COMPLETE ($0, &lt;=40% / 160s)  -&gt;  SHARED POOL &amp; EVIDENCE VERIFICATION</text>
+  <rect x="48" y="390" width="230" height="132" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="49" y="390" width="228" height="4" rx="2" fill="#2149A1"/>
+  <rect x="62" y="406" width="34" height="24" rx="5" fill="#EEF2FC"/>
+<text x="79.0" y="422" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="700" fill="#2149A1" text-anchor="middle" >05</text>
+  <text x="104" y="422" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="600" fill="#475569" text-anchor="start" >retrieval + pool()</text>
+  <text x="62" y="450" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#1E293B" text-anchor="start" >Evidence Fetch</text>
+  <text x="62" y="476" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >DNS-pinned SSRF fetch,</text>
+  <text x="62" y="496" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >parsers &amp; anti-copy-paste</text>
+  <line x1="282" y1="456" x2="296" y2="456" stroke="#7199F1" stroke-width="2.2"/><polygon points="294,451 302,456 294,461" fill="#7199F1"/>
+  <rect x="306" y="390" width="230" height="132" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="307" y="390" width="228" height="4" rx="2" fill="#7199F1"/>
+  <rect x="320" y="406" width="34" height="24" rx="5" fill="#EEF2FC"/>
+<text x="337.0" y="422" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="700" fill="#7199F1" text-anchor="middle" >06</text>
+  <text x="362" y="422" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="600" fill="#475569" text-anchor="start" >find_candidates</text>
+  <text x="320" y="450" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#1E293B" text-anchor="start" >Window Scoring</text>
+  <text x="320" y="476" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >pymorphy3, +-2 window,</text>
+  <text x="320" y="496" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >unit norm -&gt; Top-8 [1..8]</text>
+  <line x1="540" y1="456" x2="554" y2="456" stroke="#7199F1" stroke-width="2.2"/><polygon points="552,451 560,456 552,461" fill="#7199F1"/>
+  <rect x="564" y="390" width="230" height="132" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="565" y="390" width="228" height="4" rx="2" fill="#C2410C"/>
+  <rect x="578" y="406" width="34" height="24" rx="5" fill="#FFF2C7"/>
+<text x="595.0" y="422" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="700" fill="#C2410C" text-anchor="middle" >07</text>
+  <text x="620" y="422" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="600" fill="#475569" text-anchor="start" >Gemma 4 (26B/E4B)</text>
+  <text x="578" y="450" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#1E293B" text-anchor="start" >Numbered Verdict</text>
+  <text x="578" y="476" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >Select #n + 3 anti-</text>
+  <text x="578" y="496" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >hallucination barriers</text>
+  <line x1="798" y1="456" x2="812" y2="456" stroke="#7199F1" stroke-width="2.2"/><polygon points="810,451 818,456 810,461" fill="#7199F1"/>
+  <rect x="822" y="390" width="230" height="132" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="823" y="390" width="228" height="4" rx="2" fill="#147249"/>
+  <rect x="836" y="406" width="34" height="24" rx="5" fill="#E6F6EE"/>
+<text x="853.0" y="422" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="700" fill="#147249" text-anchor="middle" >08</text>
+  <text x="878" y="422" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="600" fill="#475569" text-anchor="start" >contract.py</text>
+  <text x="836" y="450" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="700" fill="#1E293B" text-anchor="start" >Final Contract</text>
+  <text x="836" y="476" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >SEVERITY merge, safe</text>
+  <text x="836" y="496" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="400" fill="#475569" text-anchor="start" >fixes &amp; Costs (None vs 0)</text>
+  <rect x="48" y="538" width="1004" height="40" rx="8" fill="#E6F6EE" stroke="#147249" stroke-width="1.2"/>
+  <rect x="60" y="546" width="68" height="24" rx="5" fill="#147249"/>
+<text x="94.0" y="562" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle" >OUTPUT</text>
+  <text x="140" y="563" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1E293B" text-anchor="start" >Strict Report: [start:end] spans, verbatim quotes + (p. N), safe reversed-offset fixes &amp; Costs (None vs 0)</text>
+</svg>

@@ -1,0 +1,53 @@
+{
+  "id": "r11-katki",
+  "origin": "real",
+  "split": "dev",
+  "event": "katki-936-1131",
+  "source_url": "https://www.zelenograd.ru/news/63737/",
+  "modification": "Документов нет намеренно: официальный первоисточник (закупки) не найден. Проверка честного unresolved.",
+  "annotated": "2026-09-23",
+  "claims": [
+    {
+      "id": "g1",
+      "quote": "Это два последних городских катка такого типа, где сохранилась старая инфраструктура",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    },
+    {
+      "id": "g2",
+      "quote": "Работы растянутся до лета 2027 года",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    },
+    {
+      "id": "g3",
+      "quote": "у корпуса 936 предстоит заменить ледовое поле и холодильное оборудование",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    },
+    {
+      "id": "g4",
+      "quote": "у корпуса 1131 построят новый павильон с прокатом и небольшим кафе",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    },
+    {
+      "id": "g5",
+      "quote": "Его должны заменить до 25 октября",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    },
+    {
+      "id": "g6",
+      "quote": "каток в 11-м микрорайоне капитально обновляли ещё в 2023 году",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+# Официальные порталы органов власти РФ и образовательных ведомств
+edu.gov.ru
+obrnadzor.gov.ru
+fipi.ru
+edsoo.ru
+fgosreestr.edsoo.ru
+pravo.gov.ru
+regulation.gov.ru
+minobrnauki.gov.ru
+rostrud.gov.ru
+rosstat.gov.ru
+ikp-rao.ru
+mos.ru
+zelao.mos.ru
+dkzelenograd.ru
+zelkultura.ru
+miet.ru
+abiturient.miet.ru
+mgpu.ru
+government.ru
+kremlin.ru
+gov.ru

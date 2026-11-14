@@ -1,0 +1,16 @@
+[
+  {
+    "file": "d1.txt",
+    "url": "https://sao.mos.ru/news/news/detail/13892911.html",
+    "title": "В Тимирязевском районе на севере столицы планируется построить два бизнес-центра",
+    "publisher_kind": "official",
+    "published_at": "2026-09-21"
+  },
+  {
+    "file": "d2.txt",
+    "url": "https://msk1.ru/text/gorod/2026/09/22/76655153/",
+    "title": "Около ТПУ «Петровско-Разумовская» построят бизнес-центры с двумя стеклянными башнями",
+    "publisher_kind": "media",
+    "published_at": "2026-09-22"
+  }
+]

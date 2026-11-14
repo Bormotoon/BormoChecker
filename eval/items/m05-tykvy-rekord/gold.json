@@ -1,0 +1,116 @@
+{
+  "id": "m05-tykvy-rekord",
+  "origin": "modified",
+  "split": "dev",
+  "event": "pumpkin-fest-2026",
+  "source_url": "",
+  "modification": "Рекорд 969 → 1096 кг (перестановка цифр), конец фестиваля 27 → 30 сентября.",
+  "annotated": "2026-09-23",
+  "claims": [
+    {
+      "id": "g1",
+      "quote": "Заплыв на гигантских тыквах устроят на ВДНХ 26 сентября",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "парад костюмов на воде, который пройдет 26 сентября с 15:00 до 18:00 на пруду «Городской фермы» ВДНХ",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g2",
+      "quote": "в прошлом году на фестивале удивили тыквой весом в тонну",
+      "checkability": "web_checkable",
+      "verdict": "partially_supported",
+      "evidence": [
+        {
+          "document": "d2.txt",
+          "quote": "В 2025 году он обновил рекорд страны, вырастив тыкву весом 969 кг",
+          "relation": "partially_supports"
+        }
+      ],
+      "note": "Заголовок округляет 969 кг до тонны."
+    },
+    {
+      "id": "g3",
+      "quote": "В субботу в 15:00",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "26 сентября с 15:00 до 18:00",
+          "relation": "supports"
+        }
+      ],
+      "note": "26.09.2026 — суббота."
+    },
+    {
+      "id": "g4",
+      "quote": "проплывут по Третьему Каменскому пруду",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": [],
+      "note": "Первоисточник: «на пруду „Городской фермы“» — название пруда не подтверждено."
+    },
+    {
+      "id": "g5",
+      "quote": "зрители будут голосовать за лучший образ",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "Посетители смогут выбрать победителя",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g6",
+      "quote": "фермер Александр Чусов из Подмосковья установил рекорд России по выращиванию тыквы — она весила 1096 килограммов",
+      "checkability": "web_checkable",
+      "verdict": "contradicted",
+      "evidence": [
+        {
+          "document": "d2.txt",
+          "quote": "В 2025 году он обновил рекорд страны, вырастив тыкву весом 969 кг",
+          "relation": "contradicts"
+        }
+      ],
+      "note": "Переставлены цифры: 969 → 1096."
+    },
+    {
+      "id": "g7",
+      "quote": "проходит на «Городской ферме» ВДНХ до 30 сентября",
+      "checkability": "web_checkable",
+      "verdict": "contradicted",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "С 10 по 27 сентября здесь будут представлены овощи-рекордсмены",
+          "relation": "contradicts"
+        }
+      ],
+      "note": "27 → 30 сентября."
+    },
+    {
+      "id": "g8",
+      "quote": "В прошлом году чемпионат объединил более 2 тысяч участников из 30 городов",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": [],
+      "note": "ЛОВУШКА: в первоисточнике числа ЭТОГО года (свыше тысячи участников, более 200 городов) — это не опровержение прошлогодних."
+    },
+    {
+      "id": "g9",
+      "quote": "финальную выставку посетили около 100 тысяч человек",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    }
+  ]
+}

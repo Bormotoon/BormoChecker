@@ -1,0 +1,53 @@
+{
+  "id": "r02-avtobusy",
+  "origin": "real",
+  "split": "dev",
+  "event": "bus-stops-0926",
+  "source_url": "https://www.zelenograd.ru/news/63730/",
+  "modification": "",
+  "annotated": "2026-09-23",
+  "claims": [
+    {
+      "id": "g1",
+      "quote": "Новые остановки появятся на семи автобусных маршрутах с 26 сентября",
+      "checkability": "web_checkable",
+      "verdict": "partially_supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "С 26 сентября для районных маршрутов 16 и 400т, а также социальных маршрутов 20 и 20к добавляется остановка «19-й микрорайон»",
+          "relation": "partially_supports"
+        }
+      ],
+      "note": "Дата и 4 маршрута из 7 подтверждены; 3, 24, 27 в сохранённом первоисточнике нет."
+    },
+    {
+      "id": "g2",
+      "quote": "На маршрутах 16, 400 т, 20 и 20к добавится остановка «19-й микрорайон» на Заводской улице",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "для районных маршрутов 16 и 400т, а также социальных маршрутов 20 и 20к добавляется остановка «19-й микрорайон»",
+          "relation": "supports"
+        }
+      ],
+      "note": "«Заводская улица» в первоисточнике не названа — но и не противоречит; строгий разметчик может дать partially."
+    },
+    {
+      "id": "g3",
+      "quote": "Она появится на участке между станцией Крюково и остановкой «Заводская улица»",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    },
+    {
+      "id": "g4",
+      "quote": "На маршрутах 3, 24 и 27 появится остановка «Платформа Алабушево»",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": []
+    }
+  ]
+}

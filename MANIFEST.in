@@ -1,0 +1,1 @@
+global-exclude *.sqlite* *.lock *.jsonl *.log __pycache__ *.py[cod]

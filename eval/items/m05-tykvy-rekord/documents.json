@@ -1,0 +1,23 @@
+[
+  {
+    "file": "d1.txt",
+    "url": "https://www.mos.ru/news/item/175461073/",
+    "title": "На «Городской ферме» ВДНХ пройдет осенний фестиваль урожая «Битва гигантов»",
+    "publisher_kind": "official",
+    "published_at": ""
+  },
+  {
+    "file": "d2.txt",
+    "url": "https://www.giganty.org/festival",
+    "title": "Фестиваль Чемпионата Битва Гигантов",
+    "publisher_kind": "other",
+    "published_at": ""
+  },
+  {
+    "file": "d3.txt",
+    "url": "https://vdnh.ru/news/5061/",
+    "title": "«Царь-тыква» или «Московская красавица»: москвичи выберут имена для овощей-гигантов на ВДНХ",
+    "publisher_kind": "official",
+    "published_at": ""
+  }
+]

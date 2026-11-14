@@ -1,0 +1,89 @@
+{
+  "id": "r08-tuchka",
+  "origin": "real",
+  "split": "dev",
+  "event": "mama-malysh",
+  "source_url": "https://www.zelenograd.ru/news/63739/",
+  "modification": "",
+  "annotated": "2026-09-23",
+  "claims": [
+    {
+      "id": "g1",
+      "quote": "в филиале КЦ «Зеленоград» в корпусе 606",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "КЦ «Зеленоград», корп. 606",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g2",
+      "quote": "победитель окружного конкурса «Учитель года» в номинации «Дошкольное воспитание»",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "победитель окружного конкурса «Учитель года» в номинации «Дошкольное воспитание»",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g3",
+      "quote": "45-минутные программы",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "45 минут",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g4",
+      "quote": "На 24 октября запланирована программа «Приключения маленькой тучки»",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "24 октября, 11:00",
+          "relation": "supports"
+        }
+      ]
+    },
+    {
+      "id": "g5",
+      "quote": "На 21 ноября — «Зимний домик для ежика»",
+      "checkability": "web_checkable",
+      "verdict": "unresolved",
+      "evidence": [],
+      "note": "Страница этой программы не сохранена."
+    },
+    {
+      "id": "g6",
+      "quote": "Стоимость билетов — 900 рублей (взрослый проходит бесплатно)",
+      "checkability": "web_checkable",
+      "verdict": "supported",
+      "evidence": [
+        {
+          "document": "d1.txt",
+          "quote": "900 рублей",
+          "relation": "supports"
+        },
+        {
+          "document": "d1.txt",
+          "quote": "сопровождающий взрослый проходит бесплатно",
+          "relation": "supports"
+        }
+      ]
+    }
+  ]
+}

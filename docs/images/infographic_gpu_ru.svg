@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 1140" width="880" height="1140" role="img" aria-label="Две видеокарты (RTX 5060 Ti + RTX 3070) и разделение ролей Gemma 4 MTP">
+  <title>Две видеокарты (RTX 5060 Ti + RTX 3070) и разделение ролей Gemma 4 MTP</title>
+  <rect x="0" y="0" width="880" height="1140" rx="14" fill="#F4F5F7" stroke="#D4DCED" stroke-width="1.5"/>
+  <path d="M 14 0 L 34 0 L 34 1140 L 14 1140 Q 0 1140 0 1126 L 0 14 Q 0 0 14 0 Z" fill="#2149A1"/>
+  <rect x="10" y="28" width="14" height="14" rx="3" fill="#7199F1"/>
+  <text x="17" y="68" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="800" fill="#FFFFFF" text-anchor="middle" >04</text>
+  <text x="21" y="1112" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10" font-weight="700" fill="#C7D7FE" text-anchor="start" transform="rotate(-90 21 1112)">BORMOCHECKER · DUAL-GPU &amp; LLM</text>
+  <rect x="56" y="28" width="22" height="3" rx="1.5" fill="#7199F1"/>
+  <text x="86" y="34" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11.5" font-weight="700" fill="#2149A1" text-anchor="start" >АППАРАТНЫЙ КОНТУР И МАРШРУТИЗАЦИЯ МОДЕЛЕЙ · BORMOCHECKER v1.0</text>
+  <text x="56" y="66" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="17.5" font-weight="800" fill="#1E293B" text-anchor="start" >Две видеокарты (RTX 5060 Ti + RTX 3070) и разделение ролей Gemma 4 MTP</text>
+  <text x="56" y="91" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.6" font-weight="400" fill="#475569" text-anchor="start" >Изолированный инференс без --split-mode (split-mode none): тяжёлое извлечение на 16 ГБ и быстрый аудит на 8 ГБ</text>
+  <line x1="56" y1="108" x2="856" y2="108" stroke="#D4DCED" stroke-width="1.2"/>
+  <rect x="56" y="124" width="392" height="274" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="57" y="124" width="390" height="4" rx="2" fill="#2149A1"/>
+  <rect x="72" y="140" width="206" height="24" rx="5" fill="#EEF2FC"/>
+<text x="175.0" y="156" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#2149A1" text-anchor="middle" >GPU 0 · :11440 · light=False</text>
+  <rect x="326" y="140" width="106" height="24" rx="5" fill="#E5EAF4"/>
+<text x="379.0" y="156" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#1E293B" text-anchor="middle" >14.5 / 16.3 ГБ</text>
+  <text x="72" y="186" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="800" fill="#1E293B" text-anchor="start" >RTX 5060 Ti (16 ГБ · 180 Вт)</text>
+  <text x="72" y="206" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11.0" font-weight="700" fill="#2149A1" text-anchor="start" >vibe-coding-llamacpp-1 · gemma4-26b-mtp</text>
+  <line x1="72" y1="218" x2="432" y2="218" stroke="#E5EAF4" stroke-width="1"/>
+  <text x="72" y="239" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.0" font-weight="700" fill="#475569" text-anchor="start" >Веса:</text>
+  <text x="136" y="239" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="400" fill="#1E293B" text-anchor="start" >gemma-4-26B-A4B-it-qat-UD-Q4_K_XL (MoE)</text>
+  <text x="72" y="262" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.0" font-weight="700" fill="#475569" text-anchor="start" >MTP:</text>
+  <text x="136" y="262" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="400" fill="#1E293B" text-anchor="start" >mtp-gemma-4-26B-A4B-it-Q4_0 (draft n=3)</text>
+  <text x="72" y="285" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.0" font-weight="700" fill="#475569" text-anchor="start" >Контекст:</text>
+  <text x="136" y="285" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="400" fill="#1E293B" text-anchor="start" >32768 ток. · KV q4_0 · cache-reuse 256</text>
+  <text x="72" y="308" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.0" font-weight="700" fill="#475569" text-anchor="start" >Батч:</text>
+  <text x="136" y="308" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="400" fill="#1E293B" text-anchor="start" >batch 256 · ubatch 64 · flash-attn on</text>
+  <text x="72" y="331" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.0" font-weight="700" fill="#475569" text-anchor="start" >Запуск:</text>
+  <text x="136" y="331" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="400" fill="#1E293B" text-anchor="start" >split-mode none · n-gpu-layers all · p=1</text>
+  <rect x="72" y="360" width="248" height="10" rx="4" fill="#E5EAF4"/>
+  <rect x="72" y="360" width="220.72" height="10" rx="4" fill="#2149A1"/>
+  <text x="432" y="369" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#2149A1" text-anchor="end" >14 540 MiB VRAM</text>
+  <rect x="464" y="124" width="392" height="274" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="465" y="124" width="390" height="4" rx="2" fill="#147249"/>
+  <rect x="480" y="140" width="206" height="24" rx="5" fill="#E6F6EE"/>
+<text x="583.0" y="156" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#147249" text-anchor="middle" >GPU 1 · :11441 · light=True</text>
+  <rect x="734" y="140" width="106" height="24" rx="5" fill="#E5EAF4"/>
+<text x="787.0" y="156" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#1E293B" text-anchor="middle" >6.8 / 8.2 ГБ</text>
+  <text x="480" y="186" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15.5" font-weight="800" fill="#1E293B" text-anchor="start" >RTX 3070 (8 ГБ · 240 Вт)</text>
+  <text x="480" y="206" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11.0" font-weight="700" fill="#147249" text-anchor="start" >vibe_llamacpp_3070 · gemma4-e4b-mtp</text>
+  <line x1="480" y1="218" x2="840" y2="218" stroke="#E5EAF4" stroke-width="1"/>
+  <text x="480" y="239" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.0" font-weight="700" fill="#475569" text-anchor="start" >Веса:</text>
+  <text x="544" y="239" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="400" fill="#1E293B" text-anchor="start" >gemma-4-E4B-it-Q4_0 (плотная E4B)</text>
+  <text x="480" y="262" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.0" font-weight="700" fill="#475569" text-anchor="start" >MTP+MM:</text>
+  <text x="544" y="262" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="400" fill="#1E293B" text-anchor="start" >mtp-E4B-it-Q8_0 (n=3) + mmproj-Q8_0</text>
+  <text x="480" y="285" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.0" font-weight="700" fill="#475569" text-anchor="start" >Контекст:</text>
+  <text x="544" y="285" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="400" fill="#1E293B" text-anchor="start" >32768 ток. · KV q4_0 · --embeddings</text>
+  <text x="480" y="308" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.0" font-weight="700" fill="#475569" text-anchor="start" >Батч:</text>
+  <text x="544" y="308" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="400" fill="#1E293B" text-anchor="start" >batch 2048 · ubatch 2048 · flash-attn on</text>
+  <text x="480" y="331" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.0" font-weight="700" fill="#475569" text-anchor="start" >Запуск:</text>
+  <text x="544" y="331" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="400" fill="#1E293B" text-anchor="start" >split-mode none · n-gpu-layers all · p=1</text>
+  <rect x="480" y="360" width="248" height="10" rx="4" fill="#E5EAF4"/>
+  <rect x="480" y="360" width="205.84" height="10" rx="4" fill="#147249"/>
+  <text x="840" y="369" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#147249" text-anchor="end" >6 794 MiB VRAM</text>
+  <rect x="56" y="414" width="800" height="336" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="56" y="415" width="5" height="334" rx="2.5" fill="#2149A1"/>
+  <text x="74" y="440" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11.5" font-weight="700" fill="#2149A1" text-anchor="start" >2. МАРШРУТИЗАЦИЯ ЗАДАЧ В КОДЕ (llm.py · extract.py · evaluate.py)</text>
+  <rect x="74" y="456" width="764" height="48" rx="7" fill="#F8FAFC" stroke="#D4DCED" stroke-width="1"/>
+  <rect x="84" y="468" width="122" height="24" rx="5" fill="#EEF2FC"/>
+<text x="145.0" y="484" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#2149A1" text-anchor="middle" >01 · extract.py</text>
+  <rect x="214" y="468" width="116" height="24" rx="5" fill="#EEF2FC"/>
+<text x="272.0" y="484" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#2149A1" text-anchor="middle" >GPU 0 :11440</text>
+  <text x="342" y="476" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.2" font-weight="800" fill="#1E293B" text-anchor="start" >Первичная атомизация текста (light=False)</text>
+  <text x="342" y="493" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.8" font-weight="400" fill="#475569" text-anchor="start" >Чанки по 6000 симв. + lead_context, EXTRACT_JSON_SCHEMA, max_tokens 4096/8192.</text>
+  <rect x="74" y="512" width="764" height="48" rx="7" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1"/>
+  <rect x="84" y="524" width="122" height="24" rx="5" fill="#EEF2FC"/>
+<text x="145.0" y="540" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#2149A1" text-anchor="middle" >02 · extract gaps</text>
+  <rect x="214" y="524" width="116" height="24" rx="5" fill="#FFF2C7"/>
+<text x="272.0" y="540" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#845500" text-anchor="middle" >GPU 0 → GPU 1</text>
+  <text x="342" y="532" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.2" font-weight="800" fill="#1E293B" text-anchor="start" >Адаптивный добор пропусков gaps() по таймеру</text>
+  <text x="342" y="549" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.8" font-weight="400" fill="#475569" text-anchor="start" >Идёт на 26B (:11440), но при остатке &lt;= 25.0 с переключается на E4B (:11441).</text>
+  <rect x="74" y="568" width="764" height="48" rx="7" fill="#F8FAFC" stroke="#D4DCED" stroke-width="1"/>
+  <rect x="84" y="580" width="122" height="24" rx="5" fill="#EEF2FC"/>
+<text x="145.0" y="596" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#2149A1" text-anchor="middle" >03 · evaluate.py</text>
+  <rect x="214" y="580" width="116" height="24" rx="5" fill="#E6F6EE"/>
+<text x="272.0" y="596" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#147249" text-anchor="middle" >GPU 1 :11441</text>
+  <text x="342" y="588" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.2" font-weight="800" fill="#1E293B" text-anchor="start" >Сверка каждого факта по топ-8 цитат (light=True)</text>
+  <text x="342" y="605" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.8" font-weight="400" fill="#475569" text-anchor="start" >EVALUATION_SCHEMA (max_tokens 2048, seed 42); быстрый префилл batch 2048.</text>
+  <rect x="74" y="624" width="764" height="48" rx="7" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1"/>
+  <rect x="84" y="636" width="122" height="24" rx="5" fill="#EEF2FC"/>
+<text x="145.0" y="652" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#2149A1" text-anchor="middle" >04 · NLI Gate</text>
+  <rect x="214" y="636" width="116" height="24" rx="5" fill="#E6F6EE"/>
+<text x="272.0" y="652" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#147249" text-anchor="middle" >GPU 1 :11441</text>
+  <text x="342" y="644" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.2" font-weight="800" fill="#1E293B" text-anchor="start" >Второй вопрос CONTRADICTION_CHECK_V2 (light=True)</text>
+  <text x="342" y="661" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.8" font-weight="400" fill="#475569" text-anchor="start" >Жёсткий аудит same_subject, same_time_and_subset и модальности (max_tokens 1024).</text>
+  <rect x="74" y="680" width="764" height="48" rx="7" fill="#F8FAFC" stroke="#D4DCED" stroke-width="1"/>
+  <rect x="84" y="692" width="122" height="24" rx="5" fill="#EEF2FC"/>
+<text x="145.0" y="708" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#2149A1" text-anchor="middle" >05 · /readyz + MM</text>
+  <rect x="214" y="692" width="116" height="24" rx="5" fill="#E5EAF4"/>
+<text x="272.0" y="708" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#1E293B" text-anchor="middle" >GPU 0 + GPU 1</text>
+  <text x="342" y="700" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12.2" font-weight="800" fill="#1E293B" text-anchor="start" >Health-пробы, эмбеддинги и мультимодальность</text>
+  <text x="342" y="717" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.8" font-weight="400" fill="#475569" text-anchor="start" >/readyz проверяет :11440; на GPU 1 подняты mmproj-Q8_0 (OCR) и --embeddings.</text>
+  <rect x="56.0" y="766" width="256.0" height="294" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="57.0" y="766" width="254.0" height="4" rx="2" fill="#2149A1"/>
+  <text x="72.0" y="794" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#2149A1" text-anchor="start" >SPECULATIVE DECODING</text>
+  <text x="72.0" y="818" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14.8" font-weight="800" fill="#1E293B" text-anchor="start" >MTP и запрет thinking</text>
+  <line x1="72.0" y1="830" x2="296.0" y2="830" stroke="#E5EAF4" stroke-width="1"/>
+  <text x="72.0" y="854" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.8" font-weight="700" fill="#1E293B" text-anchor="start" >Черновые головы draft-mtp</text>
+  <text x="72.0" y="872" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >Обе модели работают с --spec-type</text>
+  <text x="72.0" y="888" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >draft-mtp (n-max 3) для ускорения.</text>
+  <text x="72.0" y="924" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.8" font-weight="700" fill="#1E293B" text-anchor="start" >Подавление reasoning</text>
+  <text x="72.0" y="942" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >thinking_budget_tokens=0,</text>
+  <text x="72.0" y="958" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >enable_thinking=False и --reasoning off.</text>
+  <text x="72.0" y="994" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.8" font-weight="700" fill="#1E293B" text-anchor="start" >Повторное использование KV</text>
+  <text x="72.0" y="1012" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >cache_prompt=True + --cache-reuse 256</text>
+  <text x="72.0" y="1028" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >ускоряют общие промпты.</text>
+  <rect x="328.0" y="766" width="256.0" height="294" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="329.0" y="766" width="254.0" height="4" rx="2" fill="#C2410C"/>
+  <text x="344.0" y="794" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#C2410C" text-anchor="start" >КОНТРАКТ ВЫВОДА</text>
+  <text x="344.0" y="818" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14.8" font-weight="800" fill="#1E293B" text-anchor="start" >Strict JSON и Auto-Retry</text>
+  <line x1="344.0" y1="830" x2="568.0" y2="830" stroke="#E5EAF4" stroke-width="1"/>
+  <text x="344.0" y="854" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.8" font-weight="700" fill="#1E293B" text-anchor="start" >Строгая JSON-схема</text>
+  <text x="344.0" y="872" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >Все вызовы идут с strict=True</text>
+  <text x="344.0" y="888" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >json_schema без свободной генерации.</text>
+  <text x="344.0" y="924" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.8" font-weight="700" fill="#1E293B" text-anchor="start" >Автоповтор при обрезке</text>
+  <text x="344.0" y="942" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >finish_reason=='length' удваивает</text>
+  <text x="344.0" y="958" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >лимит токенов до 8192 и повторяет.</text>
+  <text x="344.0" y="994" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.8" font-weight="700" fill="#1E293B" text-anchor="start" >Защитный parse_llm_json</text>
+  <text x="344.0" y="1012" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >Очищает &lt;thought&gt;, управляющие</text>
+  <text x="344.0" y="1028" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >символы и Markdown-обёртки ```json.</text>
+  <rect x="600.0" y="766" width="256.0" height="294" rx="10" fill="#FFFFFF" stroke="#D4DCED" stroke-width="1.2"/>
+<rect x="601.0" y="766" width="254.0" height="4" rx="2" fill="#147249"/>
+  <text x="616.0" y="794" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#147249" text-anchor="start" >БЛОКИРОВКИ И ОЧЕРЕДЬ</text>
+  <text x="616.0" y="818" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14.8" font-weight="800" fill="#1E293B" text-anchor="start" >Semaphore(3) + Flock</text>
+  <line x1="616.0" y1="830" x2="840.0" y2="830" stroke="#E5EAF4" stroke-width="1"/>
+  <text x="616.0" y="854" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.8" font-weight="700" fill="#1E293B" text-anchor="start" >Асинхронная оценка</text>
+  <text x="616.0" y="872" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >asyncio.Semaphore(3) параллелит</text>
+  <text x="616.0" y="888" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >до 3 утверждений в pipeline.py.</text>
+  <text x="616.0" y="924" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.8" font-weight="700" fill="#1E293B" text-anchor="start" >TURN + GpuProcessLock</text>
+  <text x="616.0" y="942" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >Очередь FastAPI (MAX_WAITING=5)</text>
+  <text x="616.0" y="958" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >+ fcntl.flock по gpu_process.lock.</text>
+  <text x="616.0" y="994" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11.8" font-weight="700" fill="#1E293B" text-anchor="start" >Admission на GPU 0</text>
+  <text x="616.0" y="1012" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >_check_gpu_admission уважает</text>
+  <text x="616.0" y="1028" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start" >BORMOCHECKER_GPU_LOCKED и режимы.</text>
+  <text x="56" y="1114" font-family="ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="400" fill="#64748B" text-anchor="start" >Узлы инференса: GPU 0 RTX 5060 Ti (:11440) + GPU 1 RTX 3070 (:11441) · BormoChecker v1.0</text>
+</svg>
